@@ -1,0 +1,51 @@
+export const leadership = [
+  {
+    category: "Student Organization",
+    title: "MSU Solar Racing Team - Motor Housing Lead",
+    date: "Sep 2023 - Present",
+    detail: "Directed end-to-end design, manufacturing, and testing of in-wheel motor housings for a competitive solar race vehicle.",
+    skills: ["Technical Leadership", "Siemens NX", "Manufacturing", "Testing", "Team Coordination"],
+  },
+  {
+    category: "Student Organization",
+    title: "Engineering Student Council - Activities Chair",
+    date: "Aug 2024 - Aug 2025",
+    detail: "Led planning and execution of engineering student events, professional development programming, and engagement initiatives, including MSU's first Research Fair.",
+    skills: ["Event Planning", "Professional Development", "Student Engagement", "Cross-functional Coordination"],
+  },
+  {
+    category: "Student Organization",
+    title: "Undergraduate International Indian Students Association - Logistics Coordinator",
+    date: "Feb 2024 - May 2025",
+    detail: "Coordinated logistics for cultural and community events, supporting planning, execution, and cross-organization collaboration.",
+    skills: ["Logistics", "Cultural Programming", "Community Building", "Event Execution"],
+  },
+  {
+    category: "Service + Tutoring",
+    title: "MSU Honors Times Two - Tutor",
+    date: "Oct 2023 - May 2024",
+    detail: "Provided academic tutoring and peer support at an elementary school in foundational coursework.",
+    skills: ["Tutoring", "Academic Support", "Mentorship", "Community Service"],
+  },
+  {
+    category: "Selective Program",
+    title: "Michigan EV Scholars Program - Scholar",
+    date: "Aug 2024 - Present",
+    detail: "Selected participant in an electric-vehicle-focused academic and professional development program.",
+    skills: ["Electric Vehicles", "Professional Development", "Mobility", "Technical Growth"],
+  },
+  {
+    category: "Competition",
+    title: "MSU Designathon - Award Recipient",
+    date: "Mar 2025",
+    detail: "Led rapid design and prototyping of an accessibility-focused engineering solution in a time-constrained competition.",
+    skills: ["Accessibility", "Rapid Prototyping", "Human-Centered Design", "Pitching"],
+  },
+  {
+    category: "Competition",
+    title: "MSU 2-Day Venture - Award Recipient",
+    date: "Feb 2025",
+    detail: "Led market research and early prototyping of a more efficient server rack architecture in an intensive entrepreneurial competition.",
+    skills: ["Entrepreneurship", "Market Research", "Product Strategy", "Technical Creativity", "Pitching"],
+  },
+];
