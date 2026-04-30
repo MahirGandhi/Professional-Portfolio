@@ -16,6 +16,18 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           }
         }
 
+        @keyframes aimFloat {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+          }
+          35% {
+            transform: translate3d(4px, -6px, 0) rotate(0.4deg);
+          }
+          70% {
+            transform: translate3d(-3px, -2px, 0) rotate(-0.3deg);
+          }
+        }
+
         .portrait-hover-card {
           transform: translate3d(0, 0, 0);
           transition: transform 220ms ease, filter 220ms ease;
@@ -25,6 +37,17 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
         .portrait-hover-card:hover {
           animation: portraitFloat 1.8s ease-in-out infinite;
           filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.16));
+        }
+
+        .aim-hover-card {
+          transform: translate3d(0, 0, 0);
+          transition: transform 220ms ease, filter 220ms ease;
+          will-change: transform;
+        }
+
+        .aim-hover-card:hover {
+          animation: aimFloat 1.8s ease-in-out infinite;
+          filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.12));
         }
       `}</style>
 
@@ -85,7 +108,7 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
 
       <FadeIn delay={90}>
         <div className={classNames("rounded-[2rem] border p-5", panelClass)}>
-          <div className={classNames("mt-4 rounded-[1.5rem] border p-6", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-[#F8FAFC]")}>
+          <div className={classNames("aim-hover-card mt-4 rounded-[1.5rem] border p-6", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-[#F8FAFC]")}>
             <p className={classNames("text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>
               {profile.aim.label}
             </p>
