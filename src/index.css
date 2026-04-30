@@ -27,3 +27,28 @@
 #personal > div > div:nth-child(2) > p:nth-of-type(4)::before {
   background-image: url("https://drive.google.com/thumbnail?id=1ZZWOvyt8qPyRBGAyTEVdx_aNylvIwC37&sz=w600");
 }
+
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(320px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(56, 189, 248, 0.18), transparent 42%);
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
