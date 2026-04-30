@@ -13,6 +13,15 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
           0%, 100% { height: 8px; }
           50% { height: 24px; }
         }
+
+        @keyframes gentleFloat {
+          0%, 100% {
+            transform: translateY(0) rotate(-3deg);
+          }
+          50% {
+            transform: translateY(-6px) rotate(-1deg);
+          }
+        }
       `}</style>
 
       <p className={classNames("mb-3 text-xs font-bold uppercase tracking-[0.28em]", accent)}>
@@ -37,7 +46,10 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
           <div className="grid gap-5 xl:grid-cols-2">
             <div className="relative min-h-[250px]">
               <div className={classNames("absolute left-8 top-6 h-44 w-32 rotate-6 rounded-xl border p-2 opacity-45", mediaCard)} />
-              <div className={classNames("absolute left-2 top-2 h-52 w-40 -rotate-3 rounded-xl border p-3 transition duration-300 hover:-translate-y-1 hover:rotate-0", mediaCard)}>
+              <div
+                className={classNames("absolute left-2 top-2 h-52 w-40 rounded-xl border p-3 transition duration-300 hover:-translate-y-2 hover:rotate-0", mediaCard)}
+                style={{ animation: "gentleFloat 3.2s ease-in-out infinite" }}
+              >
                 <img
                   src="https://drive.google.com/thumbnail?id=1TJvvDnRSE23-pH1YzsOJNNmg9pz7e9DB&sz=w600"
                   alt="Beef Season 2"
