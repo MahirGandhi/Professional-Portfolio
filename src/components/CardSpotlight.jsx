@@ -2,7 +2,12 @@ import { useEffect } from "react";
 
 export function CardSpotlight() {
   useEffect(() => {
-    const selector = "article, #personal > div > div, #contact > div";
+    const selector = [
+      "article",
+      "section [class*='rounded-['][class*='border']",
+      "section [class*='rounded-3xl'][class*='border']",
+      "section [class*='rounded-2xl'][class*='border']"
+    ].join(", ");
     const addClass = () => {
       document.querySelectorAll(selector).forEach((card) => card.classList.add("spotlight-card"));
     };
