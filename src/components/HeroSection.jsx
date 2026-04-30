@@ -15,6 +15,17 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
             transform: translate3d(-4px, -3px, 0) rotate(-0.6deg);
           }
         }
+
+        .portrait-hover-card {
+          transform: translate3d(0, 0, 0);
+          transition: transform 220ms ease, filter 220ms ease;
+          will-change: transform;
+        }
+
+        .portrait-hover-card:hover {
+          animation: portraitFloat 1.8s ease-in-out infinite;
+          filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.16));
+        }
       `}</style>
 
       <FadeIn>
@@ -32,13 +43,7 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           {profile.name}
         </h1>
 
-        <div
-          className="mt-8 max-w-sm"
-          style={{
-            animation: "portraitFloat 4.2s ease-in-out infinite",
-            willChange: "transform",
-          }}
-        >
+        <div className="portrait-hover-card mt-8 max-w-sm">
           <ImageFrame
             src={profile.profileImage}
             alt="Mahir Gandhi portrait"
