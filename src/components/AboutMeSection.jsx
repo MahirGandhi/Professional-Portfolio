@@ -9,7 +9,7 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
       <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div className={classNames("rounded-[1.75rem] border p-6", panelClass)}>
           <h3 className="mb-4 text-xl font-semibold">Background</h3>
-          <p className={classNames("text-lg leading-8", mutedText)}>I grew up in Mumbai, India, in an environment shaped by engineering and entrepreneurship. That background pushed me to think beyond whether something works and focus on how it can be designed, built, and scaled reliably. It is also what drew me toward mechanical engineering: the chance to turn technical ideas into practical systems that hold up in the real world :).</p>
+          <p className={classNames("text-lg leading-8", mutedText)}>I grew up in Mumbai, India, in an environment shaped by engineering and entrepreneurship. That background pushed me to think beyond whether something works and focus on how it can be designed, built, and scaled reliably. It is also what drew me toward mechanical engineering: the chance to turn technical ideas into practical systems that hold up in the real world :)</p>
         </div>
         <div className={classNames("rounded-[1.75rem] border p-6", panelClass)}>
           <h3 className="mb-5 text-xl font-semibold">Current favorite media</h3>
