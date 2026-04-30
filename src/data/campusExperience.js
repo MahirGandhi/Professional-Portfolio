@@ -15,7 +15,7 @@ export const campusExperience = [
     date: "Jan 2026 - Present",
     location: "East Lansing, MI",
     theme: "Research Outreach + Peer Advising",
-    image: "https://drive.google.com/file/d/1zvPenpmy-64vNEBcaF4yeYc9_aHQh25V/view?usp=sharing",
+    image: "https://drive.google.com/thumbnail?id=1zvPenpmy-64vNEBcaF4yeYc9_aHQh25V&sz=w1000",
     points: [
       "Represent undergraduate research programs through outreach, event support, and peer advising while promoting research engagement across campus.",
       "Advise peers on research opportunities and serve as a liaison between students and faculty to increase awareness and participation in research programs.",
