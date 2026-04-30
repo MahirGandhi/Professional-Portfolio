@@ -3,7 +3,7 @@ export const projectsCore = [
     slug: "solar-racing-motor-housing",
     title: "MSU Solar Racing Motor Housing",
     category: "EV Hardware / Manufacturing",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1ZNOQlnGjzV5C1y37sbQYh2kYjvk_5FSe&sz=w1000",
     summary: "A sealed, lightweight in-wheel motor housing for the MSU Solar Racing Team's Cynisca vehicle, engineered to protect Marand motors from dust, moisture, and track debris.",
     details: [
       "Designed in Siemens NX using DFM principles, synchronous workflows, ordered-history workflows, parametric grooves, and integrated thermal-management considerations",
