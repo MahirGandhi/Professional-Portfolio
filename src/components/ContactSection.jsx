@@ -8,7 +8,7 @@ export function ContactSection({ profile, darkMode, mutedText }) {
           <div>
             <p className={classNames("mb-3 text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>Contact</p>
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Let's Connect.</h2>
-            <p className={classNames("mt-4 max-w-2xl leading-7", mutedText)}>I'm always open to conversations, ambitious engineering work, and opportunities to build systems that move from idea to reality.</p>
+            <p className={classNames("mt-4 max-w-2xl leading-7", mutedText)}>I'm always happy to chat about engineering ideas, exciting projects, and opportunities to collaborate.</p>
           </div>
           <div className="flex flex-col gap-3">
             <a href={`mailto:${profile.email}`} className={classNames("inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition", darkMode ? "bg-sky-300 text-slate-950 hover:bg-sky-200" : "bg-slate-950 text-white hover:bg-slate-800")}>{profile.email} <SymbolIcon name="mail" /></a>
