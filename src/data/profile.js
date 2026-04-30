@@ -12,7 +12,7 @@ export const profile = {
   portfolioPdfUrl: "#",
   profileImage: "https://drive.google.com/thumbnail?id=1im1XU7pivk2nPoGgnRnZh4RTLDmG8hvX&sz=w1000",
   heroLine:
-    "Data-driven mechanical engineer with hands-on ownership across CAD, manufacturing, quality, research, and factory-floor problem solving.",
+    "Quality • Advanced Manufacturing •Pproduct Design • Design & Release • Validation",
   about:
     "I am a junior at Michigan State University pursuing a B.S. in Mechanical Engineering with a concentration in Manufacturing Engineering and a minor in Entrepreneurship & Innovation. I thrive in creative, hands-on environments and enjoy transforming concepts into tangible products through design, manufacturability, process improvement, and end-to-end engineering execution.",
   aim: {
