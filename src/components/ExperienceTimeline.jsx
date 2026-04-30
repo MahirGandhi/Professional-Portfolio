@@ -10,7 +10,7 @@ export function ExperienceTimeline({ darkMode, items }) {
             <article className="relative pl-12">
               <div className={classNames("absolute left-[9px] top-7 h-3 w-3 rounded-full border-2", darkMode ? "border-slate-950 bg-sky-300" : "border-white bg-sky-600")} />
               <div className={classNames("grid gap-6 rounded-3xl border p-6 lg:grid-cols-[0.72fr_1.28fr]", darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white")}>
-                <ImageFrame src={item.image} alt={`${item.company} visual`} label={`${item.company} image`} darkMode={darkMode} className="aspect-[4/3]" />
+                <ImageFrame src={item.image} alt={`${item.company} visual`} label={`${item.company} image`} darkMode={darkMode} className="aspect-[4/3]" contain />
                 <div>
                   <div className="mb-4 flex flex-col justify-between gap-3 lg:flex-row lg:items-start">
                     <div>
@@ -24,9 +24,7 @@ export function ExperienceTimeline({ darkMode, items }) {
                     </div>
                   </div>
                   <div className="space-y-3">
-                    {item.points.map((point) => (
-                      <p key={point} className={classNames("leading-7", darkMode ? "text-slate-400" : "text-slate-600")}>{point}</p>
-                    ))}
+                    {item.points.map((point) => <p key={point} className={classNames("leading-7", darkMode ? "text-slate-400" : "text-slate-600")}>{point}</p>)}
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {item.skills.map((skill) => <Pill key={skill} darkMode={darkMode}>{skill}</Pill>)}
