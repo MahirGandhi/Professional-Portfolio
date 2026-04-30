@@ -11,9 +11,10 @@ export function PersonalSection() {
         <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900/70 p-6">
           <h3 className="mb-5 text-xl font-semibold">Current favorite media</h3>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-sky-300">Movie / Show</p>
-          <p className="mt-2 text-2xl font-semibold tracking-tight">Add favorite movie or show here</p>
+          <p className="mt-2 text-2xl font-semibold tracking-tight">Beef, Season 2</p>
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.22em] text-sky-300">Song</p>
-          <p className="mt-2 text-2xl font-semibold tracking-tight">Add favorite song here</p>
+          <p className="mt-2 text-2xl font-semibold tracking-tight">Eternal Summer</p>
+          <p className="mt-1 text-slate-400">The Strokes</p>
         </div>
       </div>
     </section>
