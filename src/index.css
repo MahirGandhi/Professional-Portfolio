@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+#personal > div > div:nth-child(2) > p:nth-of-type(2),
+#personal > div > div:nth-child(2) > p:nth-of-type(4) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#personal > div > div:nth-child(2) > p:nth-of-type(2)::before,
+#personal > div > div:nth-child(2) > p:nth-of-type(4)::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  flex: 0 0 5rem;
+  border-radius: 1rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#personal > div > div:nth-child(2) > p:nth-of-type(2)::before {
+  background-image: url("https://drive.google.com/thumbnail?id=1TJvvDnRSE23-pH1YzsOJNNmg9pz7e9DB&sz=w600");
+}
+
+#personal > div > div:nth-child(2) > p:nth-of-type(4)::before {
+  background-image: url("https://drive.google.com/thumbnail?id=1ZZWOvyt8qPyRBGAyTEVdx_aNylvIwC37&sz=w600");
+}
