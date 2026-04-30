@@ -1,16 +1,20 @@
 import { FadeIn, ImageFrame, Pill, classNames } from "./ui";
 
+const gmLogo = "https://drive.google.com/thumbnail?id=1kSj5oFQ37j9AhfvzlS7Rs0FD2omiTUy3&sz=w1000";
+
 export function ExperienceTimeline({ darkMode, items }) {
   return (
     <div className="relative">
       <div className={classNames("absolute left-4 top-0 h-full w-px", darkMode ? "bg-slate-800" : "bg-slate-200")} />
       <div className="space-y-5">
-        {items.map((item, index) => (
+        {items.map((item, index) => {
+          const imageSrc = item.image || (item.company === "General Motors" ? gmLogo : "");
+          return (
           <FadeIn key={`${item.company}-${item.date}`} delay={index * 70}>
             <article className="relative pl-12">
               <div className={classNames("absolute left-[9px] top-7 h-3 w-3 rounded-full border-2", darkMode ? "border-slate-950 bg-sky-300" : "border-white bg-sky-600")} />
               <div className={classNames("grid gap-6 rounded-3xl border p-6 lg:grid-cols-[0.72fr_1.28fr]", darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white")}>
-                <ImageFrame src={item.image} alt={`${item.company} visual`} label={`${item.company} image`} darkMode={darkMode} className="aspect-[4/3]" contain />
+                <ImageFrame src={imageSrc} alt={`${item.company} visual`} label={`${item.company} image`} darkMode={darkMode} className="aspect-[4/3]" contain />
                 <div>
                   <div className="mb-4 flex flex-col justify-between gap-3 lg:flex-row lg:items-start">
                     <div>
@@ -33,7 +37,8 @@ export function ExperienceTimeline({ darkMode, items }) {
               </div>
             </article>
           </FadeIn>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
