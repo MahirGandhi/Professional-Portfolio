@@ -8,7 +8,14 @@ export function CardSpotlight() {
       "section [class*='rounded-3xl'][class*='border']",
       "section [class*='rounded-2xl'][class*='border']"
     ].join(", ");
+    const syncThemeClass = () => {
+      const main = document.querySelector("main");
+      const isDark = main?.className.includes("080B10");
+      document.documentElement.classList.toggle("portfolio-dark", Boolean(isDark));
+      document.documentElement.classList.toggle("portfolio-light", !isDark);
+    };
     const addClass = () => {
+      syncThemeClass();
       document.querySelectorAll(selector).forEach((card) => card.classList.add("spotlight-card"));
     };
     const move = (event) => {
@@ -20,9 +27,11 @@ export function CardSpotlight() {
     };
     addClass();
     window.addEventListener("mousemove", move);
+    window.addEventListener("click", addClass);
     window.addEventListener("scroll", addClass, { passive: true });
     return () => {
       window.removeEventListener("mousemove", move);
+      window.removeEventListener("click", addClass);
       window.removeEventListener("scroll", addClass);
     };
   }, []);
