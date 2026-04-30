@@ -33,6 +33,7 @@ export const projectsCore = [
     title: "General Motors Fixture Systems",
     category: "Automotive Manufacturing",
     image: "",
+    hideImage: true,
     summary: "Designed and implemented production fixtures and tooling for standardized front-line assembly operations across Chevrolet Traverse, GMC Acadia, and Buick Enclave programs.",
     details: [
       "Designed, fabricated, and implemented fixtures for liftgate striker placement, hood latch alignment, fascia support, lamp simulation, and smart door-to-header gauge checks",
@@ -56,12 +57,14 @@ export const projectsCore = [
       "SPC-guided containment support for body-gap and flush dimensions",
       "FANUC robot alignment troubleshooting and shim-move support",
     ],
+    confidentialityNote: "Due to company confidentiality policies, I'm unable to share related images :(",
   },
   {
     slug: "tesla-controls-tower-cover",
     title: "Tesla Electromechanical Controls Tower Cover",
     category: "Continuous Improvement / Factory Hardware",
     image: "",
+    hideImage: true,
     summary: "Redesigned a controls tower cover for an alignment system after repeated cover and padlock failures from user wear, increased training usage, and the need for stronger accountability around a critical production system.",
     details: [
       "Developed an initial additively manufactured PETG cover reinforced with ribs, a metal pad-eye, and a backing plate to improve structural strength during early validation",
@@ -76,6 +79,7 @@ export const projectsCore = [
       { heading: "Outcome", body: "The design evolved from an initial PETG validation cover to a more durable ASA cover with 24V DC power provisions and access to the power switch while supporting security and accountability improvements." },
     ],
     components: ["Rib-reinforced printed cover geometry", "Metal pad-eye and backing plate", "Fingerprint padlock concept", "RFID scanner interface", "Failsafe actuated lock concept", "Camera visibility consideration", "24V DC power provision", "Power on/off switch access"],
+    confidentialityNote: "Due to company confidentiality policies, I'm unable to share related images :(",
   },
   {
     slug: "sand-king",
