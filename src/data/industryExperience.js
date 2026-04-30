@@ -25,7 +25,7 @@ export const industryExperience = [
   },
   {
     company: "General Motors",
-    role: "Dimensional Engineering Intern",
+    role: "Dimensional Engineering Intern - GMC Acadia, Buick Enclave, Chevy Traverse",
     date: "May 2025 - Aug 2025",
     location: "Lansing, MI",
     theme: "Dimensional Engineering + Manufacturing Quality",
@@ -52,14 +52,14 @@ export const industryExperience = [
     skills: ["Technical Leadership", "Siemens NX", "GD&T", "Ansys FEA", "Machining", "Testing", "Assembly"],
   },
   {
-    company: "NASA LSPACE Program",
+    company: "NASA LSPACE",
     role: "Lead Thermal Engineer - Orpheus",
     date: "Jan 2025 - May 2025",
     location: "Remote / East Lansing, MI",
     theme: "Systems Engineering + Thermal Architecture",
     image: "https://drive.google.com/thumbnail?id=1UOVEOOLt9IE7QM25ZYKK4c6-RR1x6xWq&sz=w1000",
     points: [
-      "Led thermal systems architecture and analysis in a multidisciplinary NASA-affiliated mission design program.",
+      "Led thermal systems architecture and analysis in a multidisciplinary NASA mission design program.",
       "Directed design decisions around insulation, active heating, radiative cooling, temperature sensing, and system-level risk mitigation.",
     ],
     skills: ["Thermal Systems", "Systems Engineering", "Mission Design", "DFMEA", "Siemens NX"],
