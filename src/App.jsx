@@ -9,7 +9,7 @@ import { HeroSection } from "./components/HeroSection";
 import { ExperienceSections } from "./components/ExperienceSections";
 import { WorkSection } from "./components/WorkSection";
 import { LeadershipSection } from "./components/LeadershipSection";
-import { PersonalSection } from "./components/PersonalSection";
+import { PersonalSection } from "./components/AboutMeSection";
 import { ContactSection } from "./components/ContactSection";
 import { ProjectDetailPage } from "./components/ProjectDetailPage";
 import { classNames } from "./components/ui";
