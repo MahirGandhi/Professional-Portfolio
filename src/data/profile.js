@@ -2,7 +2,7 @@ export const profile = {
   name: "Mahir Gandhi",
   initials: "MG",
   title: "Honors Mechanical Engineering | Michigan State University | Class of 2027",
-  availability: "Looking for internships and full-time roles post Summer 2026",
+  availability: "Looking for internships post Summer 2026 and full-time roles post Fall 2027",
   role: "Mechanical Engineering | Manufacturing | Product Design | Quality Engineering",
   location: "East Lansing, MI",
   email: "gandhim3@msu.edu",
