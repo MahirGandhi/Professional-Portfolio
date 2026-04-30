@@ -14,12 +14,18 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
           50% { height: 24px; }
         }
 
-        @keyframes gentleFloat {
+        @keyframes posterDrift {
           0%, 100% {
-            transform: translateY(0) rotate(-3deg);
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          25% {
+            transform: translate3d(4px, -3px, 0) scale(1.035);
           }
           50% {
-            transform: translateY(-14px) rotate(2deg);
+            transform: translate3d(-3px, -7px, 0) scale(1.055);
+          }
+          75% {
+            transform: translate3d(-5px, 2px, 0) scale(1.03);
           }
         }
       `}</style>
@@ -47,14 +53,20 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
             <div className="relative min-h-[250px]">
               <div className={classNames("absolute left-8 top-6 h-44 w-32 rotate-6 rounded-xl border p-2 opacity-45", mediaCard)} />
               <div
-                className={classNames("absolute left-2 top-2 h-52 w-40 rounded-xl border p-3 transition duration-300 hover:-translate-y-2 hover:rotate-0", mediaCard)}
-                style={{ animation: "gentleFloat 1.8s ease-in-out infinite" }}
+                className={classNames("absolute left-2 top-2 h-52 w-40 -rotate-3 rounded-xl border p-3 transition duration-300 hover:-translate-y-2 hover:rotate-0", mediaCard)}
               >
-                <img
-                  src="https://drive.google.com/thumbnail?id=1TJvvDnRSE23-pH1YzsOJNNmg9pz7e9DB&sz=w600"
-                  alt="Beef Season 2"
-                  className="h-32 w-full rounded-lg object-cover"
-                />
+                <div className="h-32 w-full overflow-hidden rounded-lg">
+                  <img
+                    src="https://drive.google.com/thumbnail?id=1TJvvDnRSE23-pH1YzsOJNNmg9pz7e9DB&sz=w600"
+                    alt="Beef Season 2"
+                    className="h-full w-full object-cover"
+                    style={{
+                      animation: "posterDrift 3.4s ease-in-out infinite",
+                      willChange: "transform",
+                    }}
+                  />
+                </div>
+
                 <p className={classNames("mt-3 text-[10px] font-bold uppercase tracking-[0.22em]", accent)}>
                   Movie / Show
                 </p>
