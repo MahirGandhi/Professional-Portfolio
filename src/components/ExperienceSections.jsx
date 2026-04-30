@@ -8,7 +8,7 @@ export function ExperienceSections({ darkMode, industryExperience, campusExperie
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className={classNames("mb-2 text-xs font-bold uppercase tracking-[0.24em]", darkMode ? "text-sky-300" : "text-sky-700")}>Engineering Track</p>
-            <h3 className="text-2xl font-semibold tracking-tight">Engineering focused leadership</h3>
+            <h3 className="text-2xl font-semibold tracking-tight">Engineering experience</h3>
           </div>
         </div>
         <ExperienceTimeline darkMode={darkMode} items={industryExperience} />
