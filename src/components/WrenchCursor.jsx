@@ -54,13 +54,14 @@ export function WrenchCursor() {
       aria-hidden="true"
     >
       <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  style={{ width: "100%", height: "100%", display: "block" }}
+>
         <path d="M14.7 6.3a4.2 4.2 0 0 0 5 5L11.2 19.8a2.4 2.4 0 0 1-3.4-3.4l8.5-8.5a4.2 4.2 0 0 0-5-5" />
       </svg>
     </div>
