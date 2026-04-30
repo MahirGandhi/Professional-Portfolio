@@ -18,12 +18,12 @@ export const profile = {
   aim: {
     label: "Engineering Aim",
     lines: [
-      "Turning CAD into production-ready hardware.",
+      "Designing manufacturable systems.",
       "Turning production data into measurable defect reduction.",
       "Engineering systems for reliability, repeatability, and scale.",
     ],
     text:
-      "My work sits at the intersection of mechanical design, manufacturing execution, quality systems, and physical validation. I care about building hardware that is not just modeled well, but manufacturable, testable, repeatable, and useful in the real world.",
+      "My work sits at the intersection of mechanical design, manufacturing execution, quality systems, and physical validation. I’m focused on building manufacturable products through first-principles problem solving, with a long-term interest in scaling the physical infrastructure behind autonomous systems.",
   },
   quickStats: [
     { value: "3+", label: "years of industry, research, and leadership" },
