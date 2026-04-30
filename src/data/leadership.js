@@ -21,6 +21,13 @@ export const leadership = [
     skills: ["Logistics", "Cultural Programming", "Community Building", "Event Execution"],
   },
   {
+    category: "Student Organization",
+    title: "International Students Organization - Director, Professional Development",
+    date: "Current",
+    detail: "Lead professional development programming for international students through career-focused workshops, networking support, recruiting preparation, and peer guidance.",
+    skills: ["Professional Development", "Career Programming", "International Student Support", "Event Planning", "Mentorship"],
+  },
+  {
     category: "Service + Tutoring",
     title: "MSU Honors Times Two - Tutor",
     date: "Oct 2023 - May 2024",
