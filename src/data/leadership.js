@@ -23,7 +23,7 @@ export const leadership = [
   {
     category: "Student Organization",
     title: "International Students Organization - Director, Professional Development",
-    date: "Current",
+    date: "April 2026 - Present",
     detail: "Lead professional development programming for international students through career-focused workshops, networking support, recruiting preparation, and peer guidance.",
     skills: ["Professional Development", "Career Programming", "International Student Support", "Event Planning", "Mentorship"],
   },
