@@ -39,11 +39,11 @@ export function Pill({ children, darkMode }) {
   return <span className={classNames("rounded-full border px-3 py-1 text-xs font-medium", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-white text-slate-700")}>{children}</span>;
 }
 
-export function ImageFrame({ src, alt, label, darkMode, className = "aspect-[4/3]", contain = false }) {
+export function ImageFrame({ src, alt, label, darkMode, className = "aspect-[4/3]", contain = false, objectPosition = "center" }) {
   return (
     <div className={classNames("overflow-hidden rounded-[1.5rem] border", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-100", className)}>
       {src ? (
-        <img src={src} alt={alt} className={classNames("h-full w-full", contain ? "object-contain p-3" : "object-cover")} />
+        <img src={src} alt={alt} style={{ objectPosition }} className={classNames("h-full w-full", contain ? "object-contain p-3" : "object-cover")} />
       ) : (
         <div className="flex h-full min-h-[220px] flex-col items-center justify-center gap-3 p-6 text-center">
           <SymbolIcon name="image" className={classNames("text-3xl", darkMode ? "text-slate-600" : "text-slate-400")} />
