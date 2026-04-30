@@ -5,7 +5,7 @@ export const campusExperience = [
     date: "Jan 2026 - Present",
     location: "East Lansing, MI",
     theme: "Academic Support",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
     points: ["Provide one-on-one and small-group tutoring in college-level mathematics, reinforcing core concepts, problem-solving strategies, and exam preparation skills."],
     skills: ["Tutoring", "Mathematics", "Problem Solving", "Exam Preparation", "Peer Mentorship"],
   },
