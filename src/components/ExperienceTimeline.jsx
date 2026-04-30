@@ -1,6 +1,6 @@
 import { FadeIn, ImageFrame, Pill, classNames } from "./ui";
 
-const gmLogo = "https://drive.google.com/thumbnail?id=1kSj5oFQ37j9AhfvzlS7Rs0FD2omiTUy3&sz=w1000";
+const gmLogo = "https://drive.google.com/thumbnail?id=1rW2l-Wdxyzz4fOF8XbSyFxjsse6wnJS_&sz=w1000";
 
 export function ExperienceTimeline({ darkMode, items }) {
   return (
