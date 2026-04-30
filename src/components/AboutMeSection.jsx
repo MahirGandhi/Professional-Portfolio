@@ -19,7 +19,7 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
             transform: translateY(0) rotate(-3deg);
           }
           50% {
-            transform: translateY(-6px) rotate(-1deg);
+            transform: translateY(-14px) rotate(2deg);
           }
         }
       `}</style>
