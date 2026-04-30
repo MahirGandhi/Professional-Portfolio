@@ -23,7 +23,7 @@ export const campusExperience = [
     skills: ["Research Outreach", "Peer Advising", "Event Support", "Faculty-Student Communication", "Mentorship"],
   },
   {
-    company: "Resident Assistant, Michigan State University",
+    company: "MSU Residence Education and Housing Services",
     role: "Resident Assistant",
     date: "Aug 2024 - Aug 2025",
     location: "East Lansing, MI",
@@ -57,7 +57,7 @@ export const campusExperience = [
     skills: ["Administration", "Data Organization", "Scheduling", "Faculty-Student Communication", "Operations Support"],
   },
   {
-    company: "MSU REHS",
+    company: "MSU Residence Education and Housing Services",
     role: "Student Food Service Assistant",
     date: "Dec 2023 - Feb 2024",
     location: "East Lansing, MI",
