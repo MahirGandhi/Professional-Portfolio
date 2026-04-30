@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { profile } from "./data/profile";
-import { industryExperience } from "./data/industryExperience";
+import { industryExperience } from "./data/industry";
 import { campusExperience } from "./data/campusExperience";
 import { leadership } from "./data/leadership";
 import { projects } from "./data/projects";
