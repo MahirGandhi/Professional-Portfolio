@@ -5,7 +5,7 @@ export const industryExperience = [
     date: "May 2026",
     location: "Hayward, CA",
     theme: "Autonomous Robotaxi",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1CvUQWScX9c9Fao-zcBANldG9ICewuB4j&sz=w1000",
     points: ["Incoming supplier quality role focused on production quality, technical problem solving, and manufacturing readiness."],
     skills: ["Supplier Quality", "Manufacturing Readiness", "Problem Solving", "Autonomous Systems"],
   },
@@ -15,7 +15,7 @@ export const industryExperience = [
     date: "Aug 2025 - Dec 2025",
     location: "Fremont, CA",
     theme: "Automotive Quality Engineering",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1Ka39fipytWNc6QMjFMcqoB5VEcVwlamF&sz=w1000",
     points: [
       "Supported Model S/X quality engineering through metrology analysis, Gage R&R studies, root-cause investigations, and cross-functional defect reduction initiatives.",
       "Led structured root-cause investigations, partnered with design and manufacturing teams to implement fixes, and helped reduce defect rates by up to 30%.",
@@ -43,7 +43,7 @@ export const industryExperience = [
     date: "Sep 2023 - Present",
     location: "East Lansing, MI",
     theme: "EV Hardware + Technical Leadership",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1lMPx30escOzDQvlG5b7-Q5icTa_eYUBY&sz=w1000",
     points: [
       "Directed end-to-end design, manufacturing, and testing of in-wheel motor housings for a competitive solar race vehicle.",
       "Designed 12+ motor housing components in Siemens NX, machined 15+ components over 100+ hours, and used FEA to drive a 6% weight reduction.",
@@ -57,7 +57,10 @@ export const industryExperience = [
     date: "Jan 2025 - May 2025",
     location: "Remote / East Lansing, MI",
     theme: "Systems Engineering + Thermal Architecture",
-    image: "",
+    image: [
+      "https://drive.google.com/thumbnail?id=1UlIHu5IoooT_KccjgXByYmlmheU1a08r&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1ZHQe4jR6WlegOPlphgYoP6EixfFQ9GwA&sz=w1000"
+    ],
     points: [
       "Led thermal systems architecture and analysis in a multidisciplinary NASA-affiliated mission design program.",
       "Directed design decisions around insulation, active heating, radiative cooling, temperature sensing, and system-level risk mitigation.",
@@ -70,7 +73,7 @@ export const industryExperience = [
     date: "May 2024 - Present",
     location: "East Lansing, MI",
     theme: "Advanced Manufacturing + Materials Processing",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
     points: [
       "Conduct research in advanced manufacturing and materials processing, including ultrasonic welding, additive manufacturing, microscopy, and Design of Experiments.",
       "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
@@ -83,7 +86,7 @@ export const industryExperience = [
     date: "Jan 2024 - May 2024",
     location: "East Lansing, MI",
     theme: "Experimental Mechanics + Battery Research",
-    image: "",
+    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
     points: ["Conducted experimental research on lithium-ion coin cells to study mechanical and thermal behavior and predict overheating mechanisms."],
     skills: ["Experimental Mechanics", "Lithium-ion Cells", "Thermal Behavior", "Mechanical Testing"],
   },
