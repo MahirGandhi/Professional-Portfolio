@@ -28,14 +28,16 @@ export function ProjectDetailPage({ project, darkMode, onBack }) {
         </button>
 
         <section className={classNames("overflow-hidden rounded-[2rem] border", panelClass)}>
-          <ImageFrame
-            src={project.image}
-            alt={`${project.title} project visual`}
-            label={`${project.title} image`}
-            darkMode={darkMode}
-            className="aspect-[16/9] rounded-none border-0"
-            contain
-          />
+          {!project.hideImage && (
+            <ImageFrame
+              src={project.image}
+              alt={`${project.title} project visual`}
+              label={`${project.title} image`}
+              darkMode={darkMode}
+              className="aspect-[16/9] rounded-none border-0"
+              contain
+            />
+          )}
 
           <div className="p-6 md:p-10">
             <p
@@ -175,13 +177,23 @@ export function ProjectDetailPage({ project, darkMode, onBack }) {
 
                   <div className="p-4">
                     <h3 className="text-sm font-semibold">{item.title}</h3>
-                    <p className={classNames("mt-1 text-xs leading-5", mutedText)}>
-                      {item.caption}
-                    </p>
+                    {item.caption && (
+                      <p className={classNames("mt-1 text-xs leading-5", mutedText)}>
+                        {item.caption}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {project.confidentialityNote && (
+          <section className={classNames("mt-8 rounded-[2rem] border p-6 text-center", panelClass)}>
+            <p className={classNames("text-sm font-semibold", mutedText)}>
+              {project.confidentialityNote}
+            </p>
           </section>
         )}
       </div>
