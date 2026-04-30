@@ -18,9 +18,9 @@ export const profile = {
   aim: {
     label: "Engineering Aim",
     lines: [
-      "Designing manufacturable systems.",
-      "Solving physical problems using first principles.",
-      "Scaling the physical infrastructure for AI.",
+      "Turning CAD into production-ready hardware.",
+      "Turning production data into measurable defect reduction.",
+      "Engineering systems for reliability, repeatability, and scale.",
     ],
     text:
       "My work sits at the intersection of mechanical design, manufacturing execution, quality systems, and physical validation. I care about building hardware that is not just modeled well, but manufacturable, testable, repeatable, and useful in the real world.",
