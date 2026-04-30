@@ -57,7 +57,7 @@ export const campusExperience = [
     skills: ["Administration", "Data Organization", "Scheduling", "Faculty-Student Communication", "Operations Support"],
   },
   {
-    company: "MSU Residence Education and Housing Services",
+    company: "MSU Residential and Hospitality Services",
     role: "Student Food Service Assistant",
     date: "Dec 2023 - Feb 2024",
     location: "East Lansing, MI",
