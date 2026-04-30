@@ -1,6 +1,6 @@
 export const campusExperience = [
   {
-    company: "CoRe Tutoring Program, Michigan State University",
+    company: "MSU CoRe Tutoring Program",
     role: "Tutor",
     date: "Jan 2026 - Present",
     location: "East Lansing, MI",
