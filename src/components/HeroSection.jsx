@@ -28,7 +28,21 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           }
         }
 
-        .portrait-hover-card {
+        @keyframes statFloat {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+          }
+          35% {
+            transform: translate3d(3px, -5px, 0) rotate(0.35deg);
+          }
+          70% {
+            transform: translate3d(-2px, -2px, 0) rotate(-0.25deg);
+          }
+        }
+
+        .portrait-hover-card,
+        .aim-hover-card,
+        .stat-hover-card {
           transform: translate3d(0, 0, 0);
           transition: transform 220ms ease, filter 220ms ease;
           will-change: transform;
@@ -39,15 +53,14 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.16));
         }
 
-        .aim-hover-card {
-          transform: translate3d(0, 0, 0);
-          transition: transform 220ms ease, filter 220ms ease;
-          will-change: transform;
-        }
-
         .aim-hover-card:hover {
           animation: aimFloat 1.8s ease-in-out infinite;
           filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.12));
+        }
+
+        .stat-hover-card:hover {
+          animation: statFloat 1.6s ease-in-out infinite;
+          filter: drop-shadow(0 14px 28px rgba(14, 165, 233, 0.10));
         }
       `}</style>
 
@@ -130,7 +143,7 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
             {profile.quickStats.map((stat) => (
               <div
                 key={stat.label}
-                className={classNames("rounded-3xl border p-4", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
+                className={classNames("stat-hover-card rounded-3xl border p-4", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
               >
                 <p className="text-3xl font-bold tracking-tight">{stat.value}</p>
                 <p className={classNames("mt-2 text-sm leading-5", mutedText)}>
