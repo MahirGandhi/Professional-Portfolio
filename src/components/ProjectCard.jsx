@@ -1,4 +1,4 @@
-import { FadeIn, ImageFrame, Pill, classNames } from "./ui";
+import { FadeIn, Pill, classNames } from "./ui";
 
 export function ProjectCard({ project, index, darkMode, onOpen }) {
   return (
@@ -10,9 +10,6 @@ export function ProjectCard({ project, index, darkMode, onOpen }) {
           darkMode ? "border-slate-800 bg-slate-900/70 hover:border-sky-300/50" : "border-slate-200 bg-white hover:border-sky-500/40 hover:shadow-xl"
         )}
       >
-        {(!project.gallery || project.image) && (
-          <ImageFrame src={project.image} alt={`${project.title} project visual`} label={`${project.title} image`} darkMode={darkMode} className="aspect-[16/9] rounded-none border-0" />
-        )}
         <div className="p-6">
           <div className="mb-5 flex items-start justify-between gap-4">
             <div>
