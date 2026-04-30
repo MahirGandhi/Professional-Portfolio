@@ -9,9 +9,10 @@ export function ProjectDetailPage({ project, darkMode, onBack }) {
       <div className="mx-auto max-w-6xl">
         <button type="button" onClick={onBack} className={classNames("mb-8 rounded-full border px-4 py-2 text-sm font-bold transition", darkMode ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800" : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100")}>Back to portfolio</button>
 
-        <section className={classNames("overflow-hidden rounded-[2rem] border", panelClass)}>
-          <ImageFrame src={project.image} alt={`${project.title} project visual`} label={`${project.title} image`} darkMode={darkMode} className="aspect-[21/10] rounded-none border-0" objectPosition="center center" />
-            <p className={classNames("text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>{project.category}</p>
+       <section className={classNames("overflow-hidden rounded-[2rem] border", panelClass)}>
+  <ImageFrame src={project.image} alt={`${project.title} project visual`} label={`${project.title} image`} darkMode={darkMode} className="aspect-[21/10] rounded-none border-0" objectPosition="center center" />
+  <div className="p-6 md:p-10">
+    <p className={classNames("text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>{project.category}</p>
             <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <h1 className="max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">{project.title}</h1>
