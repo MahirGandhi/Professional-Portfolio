@@ -57,10 +57,7 @@ export const industryExperience = [
     date: "Jan 2025 - May 2025",
     location: "Remote / East Lansing, MI",
     theme: "Systems Engineering + Thermal Architecture",
-    image: [
-      "https://drive.google.com/thumbnail?id=1UlIHu5IoooT_KccjgXByYmlmheU1a08r&sz=w1000",
-      "https://drive.google.com/thumbnail?id=1ZHQe4jR6WlegOPlphgYoP6EixfFQ9GwA&sz=w1000"
-    ],
+    image: "https://drive.google.com/thumbnail?id=1UOVEOOLt9IE7QM25ZYKK4c6-RR1x6xWq&sz=w1000",
     points: [
       "Led thermal systems architecture and analysis in a multidisciplinary NASA-affiliated mission design program.",
       "Directed design decisions around insulation, active heating, radiative cooling, temperature sensing, and system-level risk mitigation.",
