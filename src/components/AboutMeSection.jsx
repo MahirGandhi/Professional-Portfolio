@@ -42,7 +42,7 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
         <div className={classNames("rounded-[1.75rem] border p-6", panelClass)}>
           <h3 className="mb-4 text-xl font-semibold">Background</h3>
           <p className={classNames("text-lg leading-8", mutedText)}>
-            I grew up in Mumbai, India, in an environment shaped by engineering and entrepreneurship. That background pushed me to think beyond whether something works and focus on how it can be designed, built, and scaled reliably. It is also what drew me toward mechanical engineering: the chance to turn technical ideas into practical systems that hold up in the real world.
+            I grew up in Mumbai, India, around people who were always building, fixing, selling, improving, or trying to make something work better. That mindset stayed with me, and my subsequent experiences in engineering, manufacturing, quality, and research have only reinforced it. Mechanical engineering and entrepreneurship both pull me in for the same reason: they sit at the point where creativity has to survive real-world constraints!
           </p>
         </div>
 
