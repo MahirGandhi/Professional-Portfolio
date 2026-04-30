@@ -40,11 +40,11 @@ export function WrenchCursor() {
         left: position.x,
         top: position.y,
         zIndex: 9999,
-        width: 22,
-        height: 22,
+        width: 24,
+        height: 24,
         pointerEvents: "none",
         opacity: active ? 1 : 0,
-        transform: "translate(-50%, -50%) rotate(-35deg)",
+        transform: "translate(-50%, -50%) rotate(-25deg)",
         transition: "opacity 150ms ease",
         color: light ? "#0369a1" : "#38bdf8",
         filter: light
@@ -54,17 +54,20 @@ export function WrenchCursor() {
       aria-hidden="true"
     >
       <svg
-        viewBox="0 0 24 24"
+        viewBox="0 0 32 32"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
         style={{ width: "100%", height: "100%", display: "block" }}
       >
-        <path d="M15 12 8 19a2.1 2.1 0 0 1-3-3l7-7" />
-        <path d="M12 9 9 6l2-2 8 8-2 2-3-3" />
-        <path d="M14 4 20 10" />
+        <path d="M7 24.5 20.5 11" />
+        <path d="M5.5 26a2.1 2.1 0 0 0 3 0l2.2-2.2-3-3L5.5 23a2.1 2.1 0 0 0 0 3z" />
+        <path d="M17.5 7.5 24.5 14.5" />
+        <path d="M20.5 4.5 27.5 11.5" />
+        <path d="M17.5 7.5 20.5 4.5" />
+        <path d="M24.5 14.5 27.5 11.5" />
       </svg>
     </div>
   );
