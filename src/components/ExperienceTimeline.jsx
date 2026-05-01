@@ -15,34 +15,14 @@ export function ExperienceTimeline({ darkMode, items }) {
                 <div className={classNames("absolute left-[9px] top-7 h-3 w-3 rounded-full border-2", darkMode ? "border-slate-950 bg-sky-300" : "border-white bg-sky-600")} />
 
                 <div className={classNames("grid gap-6 rounded-3xl border p-6 lg:grid-cols-[0.72fr_1.28fr]", darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white")}>
-                  {item.logoText ? (
-                    <div
-                      className={classNames(
-                        "flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[1.5rem] border",
-                        darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-100"
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          "flex h-28 w-40 items-center justify-center rounded-3xl border text-6xl font-black lowercase tracking-[-0.12em]",
-                          darkMode
-                            ? "border-sky-300/25 bg-sky-300 text-slate-950"
-                            : "border-sky-700/20 bg-sky-700 text-white"
-                        )}
-                      >
-                        {item.logoText}
-                      </div>
-                    </div>
-                  ) : (
-                    <ImageFrame
-                      src={imageSrc}
-                      alt={`${item.company} visual`}
-                      label={`${item.company} image`}
-                      darkMode={darkMode}
-                      className="aspect-[4/3]"
-                      contain
-                    />
-                  )}
+                  <ImageFrame
+                    src={imageSrc}
+                    alt={`${item.company} visual`}
+                    label={`${item.company} image`}
+                    darkMode={darkMode}
+                    className="aspect-[4/3]"
+                    contain
+                  />
 
                   <div>
                     <div className="mb-4 flex flex-col justify-between gap-3 lg:flex-row lg:items-start">
