@@ -43,7 +43,7 @@ export const industryExperience = [
     date: "Sep 2023 - Present",
     location: "East Lansing, MI",
     theme: "EV Hardware + Technical Leadership",
-    image: "https://drive.google.com/thumbnail?id=1lMPx30escOzDQvlG5b7-Q5icTa_eYUBY&sz=w1000",
+    image: "image: "https://drive.google.com/thumbnail?id=1C7oESF14_m7FhVbn0iqsZWzr3P2a8jBP&sz=w1000",",
     points: [
       "Directed end-to-end design, manufacturing, and testing of in-wheel motor housings for a competitive solar race vehicle.",
       "Designed 12+ motor housing components in Siemens NX, machined 15+ components over 100+ hours, and used FEA to drive a 6% weight reduction.",
