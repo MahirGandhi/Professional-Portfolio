@@ -5,7 +5,7 @@ export const industryExperience = [
     date: "May 2026",
     location: "Hayward, CA",
     theme: "Autonomous Robotaxi",
-    image: "https://drive.google.com/thumbnail?id=1sLd1sA1MWMLj8l6cleiszyJjADd6SdK_&sz=w1000",
+    image: "https://drive.google.com/thumbnail?id=1KokGHFMBIut6GJZcWMtUzMt4ZLOU2It1&sz=w1000",
     points: ["Incoming supplier quality role focused on production quality, technical problem solving, and manufacturing readiness."],
     skills: ["Supplier Quality", "Manufacturing Readiness", "Problem Solving", "Autonomous Systems"],
   },
