@@ -62,7 +62,7 @@ export const campusExperience = [
     date: "Dec 2023 - Feb 2024",
     location: "East Lansing, MI",
     theme: "Campus Operations",
-    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
+    image: "https://drive.google.com/thumbnail?id=1wCIjg41YS7zi0u-66l-gHqUMvimHhqOG&sz=w1000",
     points: ["Supported dining hall operations through food preparation, service, sanitation, and teamwork in a high-volume, time-sensitive environment."],
     skills: ["Teamwork", "Operations", "Time-sensitive Work", "Service", "Sanitation"],
   },
