@@ -29,7 +29,8 @@ export const industryExperience = [
     date: "May 2025 - Aug 2025",
     location: "Lansing, MI",
     theme: "Dimensional Engineering + Manufacturing Quality",
-    image: "https://drive.google.com/thumbnail?id=1rW2l-Wdxyzz4fOF8XbSyFxjsse6wnJS_&sz=w1000",
+    image: "",
+    logoText: "gm",
     points: [
       "Designed, fabricated, and implemented plant-floor fixtures and tooling while supporting dimensional quality, automation troubleshooting, and continuous improvement.",
       "Improved consistency in vehicle fit and finish while collaborating with automation and manufacturing teams to resolve tooling and robot issues.",
