@@ -70,7 +70,7 @@ export const industryExperience = [
   date: "May 2024 - Present",
   location: "East Lansing, MI",
   theme: "Advanced Manufacturing + Materials Processing",
-  image: "https://drive.google.com/thumbnail?id=1be4rCeWVgZefRhSPo75i-xLYETVbLOUh&sz=w1000",
+  image: "https://drive.google.com/thumbnail?id=1wCIjg41YS7zi0u-66l-gHqUMvimHhqOG&sz=w1000",
   points: [
     "Conduct research in advanced manufacturing and materials processing, including ultrasonic welding, additive manufacturing, microscopy, and Design of Experiments.",
     "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
