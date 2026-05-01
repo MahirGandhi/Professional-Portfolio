@@ -15,7 +15,7 @@ export const industryExperience = [
     date: "Aug 2025 - Dec 2025",
     location: "Fremont, CA",
     theme: "Automotive Quality Engineering",
-    image: "https://drive.google.com/thumbnail?id=1Ka39fipytWNc6QMjFMcqoB5VEcVwlamF&sz=w1000",
+    image: "image: "https://drive.google.com/uc?export=view&id=1be4rCeWVgZefRhSPo75i-xLYETVbLOUh",",
     points: [
       "Supported Model S/X quality engineering through metrology analysis, Gage R&R studies, root-cause investigations, and cross-functional defect reduction initiatives.",
       "Led structured root-cause investigations, partnered with design and manufacturing teams to implement fixes, and helped reduce defect rates by up to 30%.",
