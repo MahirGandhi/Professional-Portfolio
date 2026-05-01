@@ -52,7 +52,7 @@ export const campusExperience = [
     date: "Jan 2024 - Aug 2024",
     location: "East Lansing, MI",
     theme: "Department Operations",
-    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
+    image: "https://drive.google.com/thumbnail?id=1wCIjg41YS7zi0u-66l-gHqUMvimHhqOG&sz=w1000",
     points: ["Supported departmental operations through administrative assistance, data organization, scheduling coordination, and faculty-student communication."],
     skills: ["Administration", "Data Organization", "Scheduling", "Faculty-Student Communication", "Operations Support"],
   },
