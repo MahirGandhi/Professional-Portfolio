@@ -70,7 +70,7 @@ export const industryExperience = [
   date: "May 2024 - Present",
   location: "East Lansing, MI",
   theme: "Advanced Manufacturing + Materials Processing",
-  image: "https://drive.google.com/thumbnail?id=1wCIjg41YS7zi0u-66l-gHqUMvimHhqOG&sz=w1000",
+  image: "https://drive.google.com/thumbnail?id=1H7NWoosRzkjnxYKESHI4T1rvtAYbwjjo&sz=w1000",
   points: [
     "Conduct research in advanced manufacturing and materials processing, including ultrasonic welding, additive manufacturing, microscopy, and Design of Experiments.",
     "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
@@ -83,7 +83,7 @@ export const industryExperience = [
     date: "Jan 2024 - May 2024",
     location: "East Lansing, MI",
     theme: "Experimental Mechanics + Battery Research",
-    image: "https://drive.google.com/thumbnail?id=1a1PardnRoxYcxftDAA_swr5HOaT1u-5r&sz=w1000",
+    image: "https://drive.google.com/thumbnail?id=1H7NWoosRzkjnxYKESHI4T1rvtAYbwjjo&sz=w1000",
     points: ["Conducted experimental research on lithium-ion coin cells to study mechanical and thermal behavior and predict overheating mechanisms."],
     skills: ["Experimental Mechanics", "Lithium-ion Cells", "Thermal Behavior", "Mechanical Testing"],
   },
