@@ -2,7 +2,7 @@ import { FadeIn, ImageFrame, SymbolIcon, classNames } from "./ui";
 
 export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
   return (
-    <section id="top" className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
+    <section id="top" className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-16">
       <style>{`
         @keyframes portraitFloat {
           0%, 100% {
@@ -88,10 +88,6 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
             className="aspect-[4/5]"
           />
         </div>
-
-        <p className={classNames("mt-5 max-w-2xl text-lg leading-8", mutedText)}>
-          {profile.heroLine}
-        </p>
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
