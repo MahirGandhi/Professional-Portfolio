@@ -29,7 +29,7 @@ export default function App() {
   ], []);
 
   if (selectedProject) {
-    return <ProjectDetailPage project={selectedProject} darkMode={darkMode} onBack={() => setSelectedProjectSlug(null)} />;
+    return <ProjectDetailPage project={selectedProject} profile={profile} darkMode={darkMode} onBack={() => setSelectedProjectSlug(null)} />;
   }
 
   const pageClass = darkMode ? "bg-[#080B10] text-slate-50" : "bg-[#F8FAFC] text-slate-950";
