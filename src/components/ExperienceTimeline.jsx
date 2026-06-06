@@ -1,5 +1,22 @@
 import { FadeIn, ImageFrame, Pill, classNames } from "./ui";
 
+function HighlightMetrics({ text, darkMode }) {
+  const metricPattern = /(\$[\d,]+\+?|±\d+(?:\.\d+)?(?:-inch)?|\b\d+(?:\.\d+)?(?:\+|%|X)?\b)/g;
+  const parts = String(text).split(metricPattern);
+
+  return parts.map((part, index) => {
+    if (!part || !metricPattern.test(part)) return part;
+
+    metricPattern.lastIndex = 0;
+
+    return (
+      <span key={`${part}-${index}`} className={classNames("font-bold", darkMode ? "text-sky-300" : "text-sky-700")}>
+        {part}
+      </span>
+    );
+  });
+}
+
 export function ExperienceTimeline({ darkMode, items }) {
   return (
     <div className="relative">
@@ -49,7 +66,7 @@ export function ExperienceTimeline({ darkMode, items }) {
                     <div className="space-y-3">
                       {item.points.map((point) => (
                         <p key={point} className={classNames("leading-7", darkMode ? "text-slate-400" : "text-slate-600")}>
-                          {point}
+                          <HighlightMetrics text={point} darkMode={darkMode} />
                         </p>
                       ))}
                     </div>
