@@ -2,7 +2,7 @@ import { FadeIn, ImageFrame, SymbolIcon, classNames } from "./ui";
 
 export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
   return (
-    <section id="top" className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-28">
+    <section id="top" className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
       <style>{`
         @keyframes portraitFloat {
           0%, 100% {
@@ -65,7 +65,7 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
       `}</style>
 
       <FadeIn>
-        <div className="mb-5 space-y-3">
+        <div className="mb-4 space-y-3">
           <p className={classNames("text-xs font-bold uppercase tracking-[0.32em]", darkMode ? "text-sky-300" : "text-sky-700")}>
             {profile.title}
           </p>
@@ -75,11 +75,11 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           </div>
         </div>
 
-        <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+        <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
           {profile.name}
         </h1>
 
-        <div className="portrait-hover-card mt-8 max-w-sm">
+        <div className="portrait-hover-card mt-6 max-w-xs sm:max-w-sm lg:max-w-[21rem]">
           <ImageFrame
             src={profile.profileImage}
             alt="Mahir Gandhi portrait"
@@ -89,11 +89,11 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
           />
         </div>
 
-        <p className={classNames("mt-6 max-w-2xl text-lg leading-8", mutedText)}>
+        <p className={classNames("mt-5 max-w-2xl text-lg leading-8", mutedText)}>
           {profile.heroLine}
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
             href={profile.resumeUrl}
             className={classNames("inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition", darkMode ? "bg-sky-300 text-slate-950 hover:bg-sky-200" : "bg-slate-950 text-white hover:bg-slate-800")}
@@ -120,15 +120,15 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
       </FadeIn>
 
       <FadeIn delay={90}>
-        <div className={classNames("rounded-[2rem] border p-5", panelClass)}>
-          <div className={classNames("aim-hover-card mt-4 rounded-[1.5rem] border p-6", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-[#F8FAFC]")}>
+        <div className={classNames("rounded-[2rem] border p-4", panelClass)}>
+          <div className={classNames("aim-hover-card rounded-[1.5rem] border p-5", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-[#F8FAFC]")}>
             <p className={classNames("text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>
               {profile.aim.label}
             </p>
 
-            <div className="mt-5 space-y-3">
+            <div className="mt-4 space-y-2.5">
               {profile.aim.lines.map((line) => (
-                <h2 key={line} className="text-3xl font-semibold leading-tight tracking-tight">
+                <h2 key={line} className="text-2xl font-semibold leading-tight tracking-tight lg:text-3xl">
                   {line}
                 </h2>
               ))}
@@ -139,14 +139,14 @@ export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
             </p>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-2 gap-3">
             {profile.quickStats.map((stat) => (
               <div
                 key={stat.label}
-                className={classNames("stat-hover-card rounded-3xl border p-4", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
+                className={classNames("stat-hover-card rounded-3xl border p-3.5", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
               >
                 <p className="text-3xl font-bold tracking-tight">{stat.value}</p>
-                <p className={classNames("mt-2 text-sm leading-5", mutedText)}>
+                <p className={classNames("mt-1.5 text-sm leading-5", mutedText)}>
                   {stat.label}
                 </p>
               </div>
