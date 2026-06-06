@@ -5,6 +5,7 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
   const mediaCard = darkMode
     ? "border-slate-800 bg-slate-950 text-slate-100"
     : "border-slate-200 bg-white text-slate-950 shadow-sm";
+  const timelineLine = darkMode ? "bg-slate-800" : "bg-slate-200";
 
   return (
     <section id="personal" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
@@ -30,26 +31,45 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
         }
       `}</style>
 
-      <p className={classNames("mb-3 text-xs font-bold uppercase tracking-[0.28em]", accent)}>
-        Personal
-      </p>
-
-      <h2 className="mb-10 text-3xl font-semibold tracking-tight sm:text-4xl">
-        More about me
-      </h2>
+      <div className="mb-7">
+        <p className={classNames("mb-2 text-xs font-bold uppercase tracking-[0.24em]", accent)}>
+          Personal
+        </p>
+        <h2 className="text-2xl font-semibold tracking-tight">
+          More about me
+        </h2>
+      </div>
 
       <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div className={classNames("rounded-[1.75rem] border p-6", panelClass)}>
-          <h3 className="mb-4 text-xl font-semibold">Background</h3>
-          <p className={classNames("text-lg leading-8", mutedText)}>
+          <div className="mb-5 flex items-center gap-3">
+            <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold", darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700")}>
+              01
+            </div>
+            <div className={classNames("h-px flex-1", timelineLine)} />
+            <p className={classNames("rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>Background</p>
+          </div>
+
+          <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Origin + mindset</p>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight">Mumbai, engineering, and constraints</h3>
+          <p className={classNames("mt-4 text-lg leading-8", mutedText)}>
             I grew up in Mumbai, India, around people who were always building, fixing, selling, improving, or trying to make something work better. That mindset stayed with me, and my subsequent experiences in engineering, manufacturing, quality, and research have only reinforced it. Mechanical engineering and entrepreneurship both pull me in for the same reason: they sit at the point where creativity has to survive real-world constraints!
           </p>
         </div>
 
         <div className={classNames("rounded-[1.75rem] border p-6", panelClass)}>
-          <h3 className="mb-5 text-xl font-semibold">Current favorite media :)</h3>
+          <div className="mb-5 flex items-center gap-3">
+            <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold", darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700")}>
+              02
+            </div>
+            <div className={classNames("h-px flex-1", timelineLine)} />
+            <p className={classNames("rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>Current picks</p>
+          </div>
 
-          <div className="grid gap-5 xl:grid-cols-2">
+          <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Favorite media</p>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight">What I’m watching and listening to</h3>
+
+          <div className="mt-5 grid gap-5 xl:grid-cols-2">
             <div className="relative min-h-[250px]">
               <div className={classNames("absolute left-8 top-6 h-44 w-32 rotate-6 rounded-xl border p-2 opacity-45", mediaCard)} />
               <div
