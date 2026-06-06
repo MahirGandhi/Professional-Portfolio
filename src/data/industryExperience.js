@@ -1,13 +1,17 @@
 export const industryExperience = [
   {
     company: "Zoox",
-    role: "Incoming Supplier Quality Engineer Intern",
-    date: "May 2026",
+    role: "Supplier Quality Engineer Intern",
+    date: "May 2026 - Present",
     location: "Hayward, CA",
     theme: "Autonomous Robotaxi",
     image: "https://drive.google.com/thumbnail?id=1KokGHFMBIut6GJZcWMtUzMt4ZLOU2It1&sz=w1000",
-    points: ["Incoming supplier quality role focused on production quality, technical problem solving, and manufacturing readiness."],
-    skills: ["Supplier Quality", "Manufacturing Readiness", "Problem Solving", "Autonomous Systems"],
+    points: [
+      "Led supplier RCA and corrective actions across interiors and low-voltage harnesses, closing 10+ open quality issues with 3 suppliers.",
+      "Drove closure of a critical PCU air-leak defect through failure-mode isolation, DOE, and poka-yoke fixture design, reducing repeat defects by 80% and lowering rework costs.",
+      "Built Zoox's first cross-platform SQE dashboard using Next.js, React, JIRA/JQL, and quality-system integration logic, unifying supplier defects, records, and corrective-action workflows across 30+ suppliers for 50+ concurrent users.",
+    ],
+    skills: ["Supplier Quality", "RCA", "DOE", "Poka-Yoke", "JIRA/JQL", "Next.js", "React", "Quality Systems"],
   },
   {
     company: "Tesla, Inc.",
@@ -65,18 +69,18 @@ export const industryExperience = [
     skills: ["Thermal Systems", "Systems Engineering", "Mission Design", "DFMEA", "Siemens NX"],
   },
   {
-  company: "Physical Ultrasonics, Microscopy, and Acoustics Lab, MSU",
-  role: "Honors Research Scholar / Research Intern",
-  date: "May 2024 - Present",
-  location: "East Lansing, MI",
-  theme: "Advanced Manufacturing + Materials Processing",
-  image: "https://drive.google.com/thumbnail?id=1ssxLXE4qkWVZmY5wo8-_tYRc-XWywLBO&sz=w1000",
-  points: [
-    "Conduct research in advanced manufacturing and materials processing, including ultrasonic welding, additive manufacturing, microscopy, and Design of Experiments.",
-    "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
-  ],
-  skills: ["Ultrasonic Welding", "Additive Manufacturing", "Microscopy", "DOE", "Materials Processing", "Image Analysis"],
-},
+    company: "Physical Ultrasonics, Microscopy, and Acoustics Lab, MSU",
+    role: "Honors Research Scholar / Research Intern",
+    date: "May 2024 - Present",
+    location: "East Lansing, MI",
+    theme: "Advanced Manufacturing + Materials Processing",
+    image: "https://drive.google.com/thumbnail?id=1ssxLXE4qkWVZmY5wo8-_tYRc-XWywLBO&sz=w1000",
+    points: [
+      "Conduct research in advanced manufacturing and materials processing, including ultrasonic welding, additive manufacturing, microscopy, and Design of Experiments.",
+      "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
+    ],
+    skills: ["Ultrasonic Welding", "Additive Manufacturing", "Microscopy", "DOE", "Materials Processing", "Image Analysis"],
+  },
   {
     company: "Experimental Solid Mechanics Lab, MSU",
     role: "Student Researcher",
