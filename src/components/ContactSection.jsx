@@ -22,10 +22,9 @@ export function ContactSection({ profile, darkMode, mutedText }) {
 
         <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Email + LinkedIn</p>
-            <h3 className="mt-2 text-2xl font-semibold tracking-tight">Reach out for roles, projects, or collaboration.</h3>
+            <h3 className="text-2xl font-semibold tracking-tight">Let's Connect.</h3>
             <p className={classNames("mt-4 max-w-2xl leading-7", mutedText)}>
-              I’m always happy to chat about engineering opportunities, manufacturing systems, quality problems, technical projects, or ways to collaborate.
+              I'm always happy to chat about exciting ideas, projects and opportunities to collaborate.
             </p>
           </div>
 
