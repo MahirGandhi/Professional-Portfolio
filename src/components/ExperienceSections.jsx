@@ -17,23 +17,42 @@ function HighlightMetrics({ text, darkMode }) {
   });
 }
 
-function PracticalExperienceCard({ item, index, darkMode }) {
-  const featured = index < 4;
+function FlowConnector({ index, isLast, darkMode }) {
+  if (isLast) return null;
+
+  const connectorClass = darkMode
+    ? "border-sky-300/40 bg-sky-300/10 text-sky-300 shadow-[0_0_22px_rgba(125,211,252,0.08)]"
+    : "border-sky-700/25 bg-sky-50 text-sky-700 shadow-sm";
+
+  const desktopDirection = index % 2 === 0 ? "→" : "↙";
+  const desktopPosition = index % 2 === 0
+    ? "top-1/2 -right-10 -translate-y-1/2"
+    : "-bottom-8 left-1/2 -translate-x-1/2";
+
+  return (
+    <>
+      <div className={classNames("hidden lg:flex absolute z-20 h-10 w-10 items-center justify-center rounded-full border text-lg font-bold", connectorClass, desktopPosition)}>
+        {desktopDirection}
+      </div>
+      <div className={classNames("mx-auto my-3 flex h-9 w-9 items-center justify-center rounded-full border text-lg font-bold lg:hidden", connectorClass)}>
+        ↓
+      </div>
+    </>
+  );
+}
+
+function PracticalExperienceCard({ item, darkMode }) {
   const panelClass = darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white";
   const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
   const accent = darkMode ? "text-sky-300" : "text-sky-700";
   const timelineLine = darkMode ? "bg-slate-800" : "bg-slate-200";
-  const arrowClass = darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700";
-  const points = featured ? item.points : item.points.slice(0, 2);
-  const skillLimit = featured ? 7 : 4;
+  const points = item.points.slice(0, 3);
+  const skillLimit = 6;
 
   return (
-    <article className={classNames("group relative overflow-hidden rounded-[1.75rem] border p-5 transition duration-300 hover:-translate-y-0.5", panelClass)}>
+    <article className={classNames("group relative h-full overflow-hidden rounded-[1.75rem] border p-5 transition duration-300 hover:-translate-y-0.5", panelClass)}>
       <div className="mb-5 flex items-center gap-3">
         <div className={classNames("h-px flex-1", timelineLine)} />
-        <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition duration-300 group-hover:translate-x-0.5", arrowClass)}>
-          →
-        </div>
         <p className={classNames("shrink-0 rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>{item.date}</p>
       </div>
 
@@ -54,7 +73,7 @@ function PracticalExperienceCard({ item, index, darkMode }) {
 
       <div className="mt-5 space-y-3">
         {points.map((point) => (
-          <p key={point} className={classNames(featured ? "text-sm leading-6" : "text-sm leading-6", mutedText)}>
+          <p key={point} className={classNames("text-sm leading-6", mutedText)}>
             <HighlightMetrics text={point} darkMode={darkMode} />
           </p>
         ))}
@@ -81,9 +100,12 @@ export function ExperienceSections({ darkMode, industryExperience }) {
         </div>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-x-14 gap-y-10 lg:grid-cols-2">
         {industryExperience.map((item, index) => (
-          <PracticalExperienceCard key={`${item.company}-${item.date}`} item={item} index={index} darkMode={darkMode} />
+          <div key={`${item.company}-${item.date}`} className="relative">
+            <PracticalExperienceCard item={item} darkMode={darkMode} />
+            <FlowConnector index={index} isLast={index === industryExperience.length - 1} darkMode={darkMode} />
+          </div>
         ))}
       </div>
     </section>
