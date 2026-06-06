@@ -33,7 +33,6 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
           </div>
 
           <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Origin + mindset</p>
-          <h3 className="mt-2 text-xl font-semibold tracking-tight">Mumbai, engineering, and constraints</h3>
           <p className={classNames("mt-4 text-lg leading-8", mutedText)}>
             I grew up in Mumbai, India, around people who were always building, fixing, selling, improving, or trying to make something work better. That mindset stayed with me, and my subsequent experiences in engineering, manufacturing, quality, and research have only reinforced it. Mechanical engineering and entrepreneurship both pull me in for the same reason: they sit at the point where creativity has to survive real-world constraints!
           </p>
@@ -45,8 +44,7 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
             <p className={classNames("rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>Current picks</p>
           </div>
 
-          <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Favorite media</p>
-          <h3 className="mt-2 text-xl font-semibold tracking-tight">What I’m watching and listening to</h3>
+          <p className={classNames("text-xs font-bold uppercase tracking-[0.22em]", accent)}>Favorite media at the moment :)</p>
 
           <div className="mt-5 grid gap-5 xl:grid-cols-2">
             <div className="relative min-h-[250px]">
