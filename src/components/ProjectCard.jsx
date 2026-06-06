@@ -1,9 +1,6 @@
 import { FadeIn, Pill, classNames } from "./ui";
 
 export function ProjectCard({ project, index, darkMode, onOpen }) {
-  const previewSections = project.sections?.slice(0, 3) || [];
-  const fallbackDetails = project.details?.slice(0, 2) || [];
-
   return (
     <FadeIn delay={index * 70} className={project.gallery ? "lg:col-span-2" : ""}>
       <article
@@ -23,25 +20,6 @@ export function ProjectCard({ project, index, darkMode, onOpen }) {
           </div>
 
           <p className={classNames("mb-5 leading-7", darkMode ? "text-slate-400" : "text-slate-600")}>{project.summary}</p>
-
-          {previewSections.length > 0 ? (
-            <div className="mb-5 grid gap-2 sm:grid-cols-3">
-              {previewSections.map((section) => (
-                <div key={section.heading} className={classNames("rounded-2xl border px-3 py-2", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-50")}>
-                  <p className={classNames("text-[10px] font-bold uppercase tracking-[0.18em]", darkMode ? "text-sky-300" : "text-sky-700")}>{section.heading}</p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="mb-5 space-y-2">
-              {fallbackDetails.map((detail) => (
-                <div key={detail} className="flex gap-3 text-sm leading-6">
-                  <span className={classNames("mt-2 h-1.5 w-1.5 shrink-0 rounded-full", darkMode ? "bg-sky-300" : "bg-sky-700")} />
-                  <span className={darkMode ? "text-slate-300" : "text-slate-700"}>{detail}</span>
-                </div>
-              ))}
-            </div>
-          )}
 
           <div className="flex flex-wrap gap-2">
             {project.skills.slice(0, 6).map((skill) => <Pill key={skill} darkMode={darkMode}>{skill}</Pill>)}
