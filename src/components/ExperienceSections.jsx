@@ -73,7 +73,6 @@ export function ExperienceSections({ darkMode, industryExperience }) {
           <div className="mb-5 max-w-3xl">
             <p className={classNames("mb-2 text-xs font-bold uppercase tracking-[0.24em]", darkMode ? "text-sky-300" : "text-sky-700")}>Research + Technical Experience</p>
             <h3 className="text-xl font-semibold tracking-tight">Additional research and systems work</h3>
-            <p className={classNames("mt-2 text-sm leading-6", darkMode ? "text-slate-400" : "text-slate-600")}>Condensed supporting experience keeps the main industry and hardware ownership roles visually dominant.</p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
