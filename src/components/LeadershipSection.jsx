@@ -18,9 +18,6 @@ export function LeadershipSection({ darkMode, leadership, panelClass, mutedText 
           <FadeIn key={item.title} delay={index * 60}>
             <article className={classNames("h-full rounded-[1.75rem] border p-6 transition duration-300 hover:-translate-y-0.5", panelClass)}>
               <div className="mb-5 flex items-center gap-3">
-                <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold", darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700")}>
-                  {String(index + 1).padStart(2, "0")}
-                </div>
                 <div className={classNames("h-px flex-1", timelineLine)} />
                 <p className={classNames("shrink-0 rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>{item.date}</p>
               </div>
