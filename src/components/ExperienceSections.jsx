@@ -23,16 +23,17 @@ function PracticalExperienceCard({ item, index, darkMode }) {
   const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
   const accent = darkMode ? "text-sky-300" : "text-sky-700";
   const timelineLine = darkMode ? "bg-slate-800" : "bg-slate-200";
+  const arrowClass = darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700";
   const points = featured ? item.points : item.points.slice(0, 2);
   const skillLimit = featured ? 7 : 4;
 
   return (
     <article className={classNames("group relative overflow-hidden rounded-[1.75rem] border p-5 transition duration-300 hover:-translate-y-0.5", panelClass)}>
       <div className="mb-5 flex items-center gap-3">
-        <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold", darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700")}>
-          {String(index + 1).padStart(2, "0")}
-        </div>
         <div className={classNames("h-px flex-1", timelineLine)} />
+        <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition duration-300 group-hover:translate-x-0.5", arrowClass)}>
+          →
+        </div>
         <p className={classNames("shrink-0 rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>{item.date}</p>
       </div>
 
