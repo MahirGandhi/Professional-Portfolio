@@ -44,7 +44,7 @@ export const industryExperience = [
   {
     company: "MSU Solar Racing Team",
     role: "Motor Housing Lead - Cynisca",
-    date: "Sep 2023 - Present",
+    date: "Sep 2023 - May 2026",
     location: "East Lansing, MI",
     theme: "EV Hardware + Technical Leadership",
     image: "https://drive.google.com/thumbnail?id=17HPmFy1HvCXwcUivZkNkWoE4a-djvUFw&sz=w1000",
