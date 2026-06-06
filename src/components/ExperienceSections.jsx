@@ -31,8 +31,8 @@ function SupportingExperienceCard({ item, darkMode }) {
 }
 
 export function ExperienceSections({ darkMode, industryExperience }) {
-  const featuredExperience = industryExperience.slice(0, 3);
-  const supportingExperience = industryExperience.slice(3);
+  const featuredExperience = industryExperience.slice(0, 4);
+  const supportingExperience = industryExperience.slice(4);
 
   return (
     <section id="experience" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
@@ -49,8 +49,8 @@ export function ExperienceSections({ darkMode, industryExperience }) {
         <div className="mt-12">
           <div className="mb-5 max-w-3xl">
             <p className={classNames("mb-2 text-xs font-bold uppercase tracking-[0.24em]", darkMode ? "text-sky-300" : "text-sky-700")}>Research + Technical Experience</p>
-            <h3 className="text-xl font-semibold tracking-tight">Additional hardware, research, and systems work</h3>
-            <p className={classNames("mt-2 text-sm leading-6", darkMode ? "text-slate-400" : "text-slate-600")}>Secondary experience is condensed here so the industry quality and manufacturing roles stay visually dominant.</p>
+            <h3 className="text-xl font-semibold tracking-tight">Additional research and systems work</h3>
+            <p className={classNames("mt-2 text-sm leading-6", darkMode ? "text-slate-400" : "text-slate-600")}>Condensed supporting experience keeps the main industry and hardware ownership roles visually dominant.</p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
