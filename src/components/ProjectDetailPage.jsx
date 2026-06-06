@@ -1,31 +1,59 @@
 import { ImageFrame, Pill, SymbolIcon, classNames } from "./ui";
 
-export function ProjectDetailPage({ project, darkMode, onBack }) {
+export function ProjectDetailPage({ project, profile, darkMode, onBack }) {
   const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
   const panelClass = darkMode
     ? "border-slate-800 bg-slate-900/70"
     : "border-slate-200 bg-white";
+  const ctaPanel = darkMode
+    ? "border-slate-800 bg-slate-950/85"
+    : "border-slate-200 bg-white/90";
+
+  const ActionButtons = ({ compact = false }) => (
+    <div className={classNames("flex flex-wrap gap-3", compact ? "justify-start" : "justify-between")}>
+      <button
+        type="button"
+        onClick={onBack}
+        className={classNames(
+          "rounded-full border px-4 py-2 text-sm font-bold transition",
+          darkMode
+            ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800"
+            : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100"
+        )}
+      >
+        Back to projects
+      </button>
+
+      {profile?.resumeUrl && (
+        <a
+          href={profile.resumeUrl}
+          target="_blank"
+          rel="noreferrer"
+          className={classNames(
+            "inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition",
+            darkMode ? "bg-sky-300 text-slate-950 hover:bg-sky-200" : "bg-slate-950 text-white hover:bg-slate-800"
+          )}
+        >
+          View resume <SymbolIcon name="download" />
+        </a>
+      )}
+    </div>
+  );
 
   return (
     <main
       className={classNames(
-        "min-h-screen px-5 py-10 lg:px-8",
+        "min-h-screen px-5 py-6 lg:px-8",
         darkMode ? "bg-[#080B10] text-slate-50" : "bg-[#F8FAFC] text-slate-950"
       )}
     >
       <div className="mx-auto max-w-6xl">
-        <button
-          type="button"
-          onClick={onBack}
-          className={classNames(
-            "mb-8 rounded-full border px-4 py-2 text-sm font-bold transition",
-            darkMode
-              ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800"
-              : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100"
-          )}
-        >
-          Back to portfolio
-        </button>
+        <div className={classNames("sticky top-4 z-20 mb-8 rounded-3xl border px-4 py-3 backdrop-blur", ctaPanel)}>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className={classNames("text-sm font-semibold", mutedText)}>{project.title}</p>
+            <ActionButtons compact />
+          </div>
+        </div>
 
         <section className={classNames("overflow-hidden rounded-[2rem] border", panelClass)}>
           {!project.hideImage && (
@@ -196,6 +224,16 @@ export function ProjectDetailPage({ project, darkMode, onBack }) {
             </p>
           </section>
         )}
+
+        <section className={classNames("mt-8 rounded-[2rem] border p-5", panelClass)}>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-semibold">Done reviewing this project?</p>
+              <p className={classNames("mt-1 text-sm", mutedText)}>Return to the portfolio or open my resume.</p>
+            </div>
+            <ActionButtons compact />
+          </div>
+        </section>
       </div>
     </main>
   );
