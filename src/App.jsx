@@ -47,7 +47,7 @@ export default function App() {
       <CommunityImpactSection darkMode={darkMode} campusExperience={campusExperience} />
       <PersonalSection profile={profile} darkMode={darkMode} panelClass={panelClass} mutedText={mutedText} />
       <ContactSection profile={profile} darkMode={darkMode} mutedText={mutedText} />
-      <footer className={classNames("border-t px-5 py-8 text-center text-sm", darkMode ? "border-slate-800 text-slate-500" : "border-slate-200 text-slate-500")}><p>{profile.name} • {profile.location} • {profile.phone}</p></footer>
+      <footer className={classNames("border-t px-5 py-8 text-center text-sm", darkMode ? "border-slate-800 text-slate-500" : "border-slate-200 text-slate-500")}><p>If you see this, thank you for reading this far :)</p></footer>
     </main>
   );
 }
