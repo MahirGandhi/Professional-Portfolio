@@ -56,19 +56,6 @@ export const industryExperience = [
     skills: ["Technical Leadership", "Siemens NX", "GD&T", "Ansys FEA", "Machining", "Testing", "Assembly"],
   },
   {
-    company: "NASA LSPACE",
-    role: "Lead Thermal Engineer - Orpheus",
-    date: "Jan 2025 - May 2025",
-    location: "Remote / East Lansing, MI",
-    theme: "Systems Engineering + Thermal Architecture",
-    image: "https://drive.google.com/thumbnail?id=1zeBc5KBhN3lMTKZ--KLmCMW2yFjAXFIa&sz=w1000",
-    points: [
-      "Led thermal systems architecture and analysis in a multidisciplinary NASA mission design program.",
-      "Directed design decisions around insulation, active heating, radiative cooling, temperature sensing, and system-level risk mitigation.",
-    ],
-    skills: ["Thermal Systems", "Systems Engineering", "Mission Design", "DFMEA", "Siemens NX"],
-  },
-  {
     company: "Physical Ultrasonics, Microscopy, and Acoustics Lab, MSU",
     role: "Honors Research Scholar / Research Intern",
     date: "May 2024 - Present",
@@ -80,6 +67,19 @@ export const industryExperience = [
       "Developed methods to categorize advanced composites and contributed to research showing improved repair outcomes using ultrasonic welding techniques.",
     ],
     skills: ["Ultrasonic Welding", "Additive Manufacturing", "Microscopy", "DOE", "Materials Processing", "Image Analysis"],
+  },
+  {
+    company: "NASA LSPACE",
+    role: "Lead Thermal Engineer - Orpheus",
+    date: "Jan 2025 - May 2025",
+    location: "Remote / East Lansing, MI",
+    theme: "Systems Engineering + Thermal Architecture",
+    image: "https://drive.google.com/thumbnail?id=1zeBc5KBhN3lMTKZ--KLmCMW2yFjAXFIa&sz=w1000",
+    points: [
+      "Led thermal systems architecture and analysis in a multidisciplinary NASA mission design program.",
+      "Directed design decisions around insulation, active heating, radiative cooling, temperature sensing, and system-level risk mitigation.",
+    ],
+    skills: ["Thermal Systems", "Systems Engineering", "Mission Design", "DFMEA", "Siemens NX"],
   },
   {
     company: "Experimental Solid Mechanics Lab, MSU",
