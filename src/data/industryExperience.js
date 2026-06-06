@@ -1,7 +1,7 @@
 export const industryExperience = [
   {
     company: "Zoox",
-    role: "Supplier Quality Engineer Intern",
+    role: "Supplier Quality Engineer Intern - Robotaxi",
     date: "May 2026 - Present",
     location: "Hayward, CA",
     theme: "Autonomous Robotaxi",
