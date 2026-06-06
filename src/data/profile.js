@@ -8,7 +8,7 @@ export const profile = {
   email: "gandhim3@msu.edu",
   phone: "(463)-254-9796",
   linkedin: "https://www.linkedin.com/in/mahir-nishit-gandhi/",
-  resumeUrl: "https://drive.google.com/file/d/1Hv41i9QqAnFsWLCCQqkSSMRXfByCEE7x/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1L3QDvBpDHPfeF65CvEbwz-9HK1MR02yU/view?usp=sharing",
   portfolioPdfUrl: "#",
   profileImage: "https://drive.google.com/thumbnail?id=1im1XU7pivk2nPoGgnRnZh4RTLDmG8hvX&sz=w1000",
   heroLine:
