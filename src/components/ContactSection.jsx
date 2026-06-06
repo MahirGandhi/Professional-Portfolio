@@ -22,7 +22,7 @@ export function ContactSection({ profile, darkMode, mutedText }) {
 
         <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <h3 className="text-2xl font-semibold tracking-tight">Let's Connect.</h3>
+            <h3 className="text-2xl font-semibold tracking-tight">Reach out!</h3>
             <p className={classNames("mt-4 max-w-2xl leading-7", mutedText)}>
               I'm always happy to chat about exciting ideas, projects and opportunities to collaborate.
             </p>
