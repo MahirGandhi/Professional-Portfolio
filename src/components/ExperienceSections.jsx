@@ -17,30 +17,6 @@ function HighlightMetrics({ text, darkMode }) {
   });
 }
 
-function FlowConnector({ index, isLast, darkMode }) {
-  if (isLast) return null;
-
-  const connectorClass = darkMode
-    ? "border-sky-300/40 bg-sky-300/10 text-sky-300 shadow-[0_0_22px_rgba(125,211,252,0.08)]"
-    : "border-sky-700/25 bg-sky-50 text-sky-700 shadow-sm";
-
-  const desktopDirection = index % 2 === 0 ? "→" : "↙";
-  const desktopPosition = index % 2 === 0
-    ? "top-1/2 -right-10 -translate-y-1/2"
-    : "-bottom-8 left-1/2 -translate-x-1/2";
-
-  return (
-    <>
-      <div className={classNames("hidden lg:flex absolute z-20 h-10 w-10 items-center justify-center rounded-full border text-lg font-bold", connectorClass, desktopPosition)}>
-        {desktopDirection}
-      </div>
-      <div className={classNames("mx-auto my-3 flex h-9 w-9 items-center justify-center rounded-full border text-lg font-bold lg:hidden", connectorClass)}>
-        ↓
-      </div>
-    </>
-  );
-}
-
 function PracticalExperienceCard({ item, darkMode }) {
   const panelClass = darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white";
   const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
@@ -100,12 +76,9 @@ export function ExperienceSections({ darkMode, industryExperience }) {
         </div>
       </div>
 
-      <div className="grid gap-x-14 gap-y-10 lg:grid-cols-2">
-        {industryExperience.map((item, index) => (
-          <div key={`${item.company}-${item.date}`} className="relative">
-            <PracticalExperienceCard item={item} darkMode={darkMode} />
-            <FlowConnector index={index} isLast={index === industryExperience.length - 1} darkMode={darkMode} />
-          </div>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {industryExperience.map((item) => (
+          <PracticalExperienceCard key={`${item.company}-${item.date}`} item={item} darkMode={darkMode} />
         ))}
       </div>
     </section>
