@@ -1,6 +1,23 @@
 import { ExperienceTimeline } from "./ExperienceTimeline";
 import { classNames } from "./ui";
 
+function HighlightMetrics({ text, darkMode }) {
+  const metricPattern = /(\$[\d,]+\+?|±\d+(?:\.\d+)?(?:-inch)?|\b\d+(?:\.\d+)?(?:\+|%|X)?\b)/g;
+  const parts = String(text).split(metricPattern);
+
+  return parts.map((part, index) => {
+    if (!part || !metricPattern.test(part)) return part;
+
+    metricPattern.lastIndex = 0;
+
+    return (
+      <span key={`${part}-${index}`} className={classNames("font-bold", darkMode ? "text-sky-300" : "text-sky-700")}>
+        {part}
+      </span>
+    );
+  });
+}
+
 function SupportingExperienceCard({ item, darkMode }) {
   const panelClass = darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white";
   const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
@@ -17,7 +34,13 @@ function SupportingExperienceCard({ item, darkMode }) {
         <p className={classNames("w-fit shrink-0 rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>{item.date}</p>
       </div>
 
-      <p className={classNames("mt-4 text-sm leading-6", mutedText)}>{item.points[0]}</p>
+      <div className="mt-4 space-y-2">
+        {item.points.slice(0, 2).map((point) => (
+          <p key={point} className={classNames("text-sm leading-6", mutedText)}>
+            <HighlightMetrics text={point} darkMode={darkMode} />
+          </p>
+        ))}
+      </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
         {item.skills.slice(0, 3).map((skill) => (
