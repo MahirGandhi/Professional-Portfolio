@@ -13,9 +13,6 @@ export function ProjectCard({ project, index, darkMode, onOpen }) {
         )}
       >
         <div className="mb-5 flex items-center gap-3">
-          <div className={classNames("flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold", darkMode ? "border-sky-300/40 bg-sky-300/10 text-sky-300" : "border-sky-700/25 bg-sky-50 text-sky-700")}>
-            {String(index + 1).padStart(2, "0")}
-          </div>
           <div className={classNames("h-px flex-1", timelineLine)} />
           <div className={classNames("shrink-0 rounded-full px-3 py-1 text-xs font-bold", darkMode ? "bg-sky-300 text-slate-950" : "bg-sky-100 text-sky-900")}>{project.metric}</div>
         </div>
