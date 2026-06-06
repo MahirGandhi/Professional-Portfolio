@@ -16,7 +16,7 @@ export const profile = {
   about:
     "I am a junior at Michigan State University pursuing a B.S. in Mechanical Engineering with a concentration in Manufacturing Engineering and a minor in Entrepreneurship & Innovation. I thrive in creative, hands-on environments and enjoy transforming concepts into tangible products through design, manufacturability, process improvement, and end-to-end engineering execution.",
   aim: {
-    label: "Engineering Aim",
+    label: "Engineering Focus",
     lines: [
       "Designing manufacturable systems.",
       "Turning production data into measurable defect reduction.",
