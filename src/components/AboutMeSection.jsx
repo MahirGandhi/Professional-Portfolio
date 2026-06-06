@@ -14,21 +14,6 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
           0%, 100% { height: 8px; }
           50% { height: 24px; }
         }
-
-        @keyframes posterDrift {
-          0%, 100% {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-          25% {
-            transform: translate3d(4px, -3px, 0) scale(1.035);
-          }
-          50% {
-            transform: translate3d(-3px, -7px, 0) scale(1.055);
-          }
-          75% {
-            transform: translate3d(-5px, 2px, 0) scale(1.03);
-          }
-        }
       `}</style>
 
       <div className="mb-7">
@@ -74,10 +59,6 @@ export function PersonalSection({ darkMode, panelClass, mutedText }) {
                     src="https://drive.google.com/thumbnail?id=1TJvvDnRSE23-pH1YzsOJNNmg9pz7e9DB&sz=w600"
                     alt="Beef Season 2"
                     className="h-full w-full object-cover"
-                    style={{
-                      animation: "posterDrift 3.4s ease-in-out infinite",
-                      willChange: "transform",
-                    }}
                   />
                 </div>
 
