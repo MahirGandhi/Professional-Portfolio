@@ -77,7 +77,7 @@ export const industryExperience = [
     date: "Jan 2025 - May 2025",
     location: "Remote / East Lansing, MI",
     theme: "Systems Engineering + Thermal Architecture",
-    image: "https://drive.google.com/thumbnail?id=1zeBc5KBhN3lMTKZ--KLmCMW2yFjAXFIa&sz=w1000",
+    image: "https://www.nasa.gov/wp-content/themes/nasa/assets/images/nasa-logo.svg",
     points: [
       "Owned thermal architecture, CAD in Siemens NX, BOM control, and DFMEA for a Venus aerobot, reducing system mass by 12%.",
       "Integrated insulation, active heating, radiative cooling, and temperature sensing into a PDR-ready thermal system.",
