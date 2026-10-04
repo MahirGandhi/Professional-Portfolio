@@ -52,6 +52,14 @@ function ExperienceBanner({ media }) {
     return () => { observer.disconnect(); preference.removeEventListener("change", sync); element.pause(); };
   }, []);
 
+  // Start only after React has attached the lazily loaded source. Calling play
+  // in the observer before that render leaves preload="none" on the poster.
+  useEffect(() => {
+    if (load && visible.current && (intent.current ?? !motion.current?.matches)) {
+      video.current.play().catch(() => setPlaying(false));
+    }
+  }, [load]);
+
   const toggle = () => {
     intent.current = !playing;
     if (playing) video.current.pause();
@@ -151,4 +159,3 @@ export function CommunityImpactSection({ darkMode, campusExperience }) {
     </section>
   );
 }
-
