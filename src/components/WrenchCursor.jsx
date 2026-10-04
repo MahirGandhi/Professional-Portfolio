@@ -8,7 +8,7 @@ export function WrenchCursor() {
   useEffect(() => {
     const selector = [
       ".spotlight-card",
-      "article:not(.experience-entry)",
+      "article",
       "section [class*='rounded'][class*='border']",
     ].join(", ");
 
@@ -76,4 +76,3 @@ export function WrenchCursor() {
     </div>
   );
 }
-

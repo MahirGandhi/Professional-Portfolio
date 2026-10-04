@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function CardSpotlight() {
   useEffect(() => {
     const selector = [
-      "article:not(.experience-entry)",
+      "article",
       "section [class*='rounded-['][class*='border']",
       "section [class*='rounded-3xl'][class*='border']",
       "section [class*='rounded-2xl'][class*='border']"
@@ -37,4 +37,3 @@ export function CardSpotlight() {
   }, []);
   return null;
 }
-

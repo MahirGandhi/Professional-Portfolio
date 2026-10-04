@@ -1,119 +1,85 @@
-import { useEffect, useRef, useState } from "react";
 import { classNames } from "./ui";
-import { experienceMedia } from "../data/experienceMedia";
-import "./experience.css";
 
-function ExperiencePhoto({ photo, compact = false }) {
-  const dialog = useRef(null);
-  return (
-    <figure className={classNames("experience-photo", compact && "experience-photo--wide")}>
-      <button type="button" className={classNames("experience-photo-button", photo.rotate && "experience-photo-button--rotated")} onClick={() => dialog.current.showModal()} aria-label={`Enlarge photo: ${photo.alt}`}>
-        <img src={photo.src} alt={photo.alt} loading="lazy" style={{ objectPosition: photo.position }} />
-        <span className="experience-enlarge" aria-hidden="true">↗</span>
-      </button>
-      <figcaption>{photo.caption}</figcaption>
-      <dialog ref={dialog} className="experience-lightbox" onClick={(event) => { if (event.target === event.currentTarget) dialog.current.close(); }}>
-        <form method="dialog"><button autoFocus aria-label="Close enlarged photo">Close ×</button></form>
-        <div className={classNames("experience-lightbox-image", photo.rotate && "experience-lightbox-image--rotated")}>
-          <img src={photo.src} alt={photo.alt} />
-        </div>
-        <p>{photo.caption}</p>
-      </dialog>
-    </figure>
-  );
+function HighlightMetrics({ text, darkMode }) {
+  const metricPattern = /(\$[\d,]+\+?|±\d+(?:\.\d+)?(?:-inch)?|\b\d+(?:\.\d+)?(?:\+|%|X)?\b)/g;
+  const parts = String(text).split(metricPattern);
+
+  return parts.map((part, index) => {
+    if (!part || !metricPattern.test(part)) return part;
+
+    metricPattern.lastIndex = 0;
+
+    return (
+      <span key={`${part}-${index}`} className={classNames("font-bold", darkMode ? "text-sky-300" : "text-sky-700")}>
+        {part}
+      </span>
+    );
+  });
 }
 
-function ExperienceBanner({ media }) {
-  const video = useRef(null);
-  const [load, setLoad] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const [failed, setFailed] = useState(false);
-  // The user's pause choice survives scrolling back to an entry.
-  const intent = useRef(null);
-  const visible = useRef(false);
-  const motion = useRef(null);
-
-  useEffect(() => {
-    const element = video.current;
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    motion.current = preference;
-    const sync = () => {
-      if (visible.current && (intent.current ?? !preference.matches)) {
-        setLoad(true);
-        element.play().catch(() => setPlaying(false));
-      } else element.pause();
-    };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible.current = entry.isIntersecting;
-      sync();
-    }, { threshold: 0.1 });
-    observer.observe(element);
-    preference.addEventListener("change", sync);
-    return () => { observer.disconnect(); preference.removeEventListener("change", sync); element.pause(); };
-  }, []);
-
-  // Start only after React has attached the lazily loaded source. Calling play
-  // in the observer before that render leaves preload="none" on the poster.
-  useEffect(() => {
-    if (load && visible.current && (intent.current ?? !motion.current?.matches)) {
-      video.current.play().catch(() => setPlaying(false));
-    }
-  }, [load]);
-
-  const toggle = () => {
-    intent.current = !playing;
-    if (playing) video.current.pause();
-    else { setLoad(true); video.current.play().catch(() => setPlaying(false)); }
-  };
+function PracticalExperienceCard({ item, darkMode }) {
+  const panelClass = darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white";
+  const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
+  const accent = darkMode ? "text-sky-300" : "text-sky-700";
+  const timelineLine = darkMode ? "bg-slate-800" : "bg-slate-200";
+  const points = item.points.slice(0, 3);
+  const skillLimit = 6;
 
   return (
-    <div className="experience-banner-group">
-      <div className="experience-banner">
-        <video ref={video} src={load ? media.video.src : undefined} poster={media.photo.src} muted loop playsInline preload="none" aria-label={`${media.name} public company footage`} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)} onLoadedData={() => { if (visible.current && (intent.current ?? !motion.current?.matches)) video.current.play().catch(() => setPlaying(false)); }} />
-        <div className="experience-banner-shade" />
-        <p className="experience-banner-name" aria-hidden="true">{media.name}</p>
-        {!failed && <button type="button" onClick={toggle} className="experience-video-control" aria-label={`${playing ? "Pause" : "Play"} ${media.name} video`}>{playing ? "Ⅱ Pause" : "▷ Play"}</button>}
+    <article className={classNames("group relative h-full overflow-hidden rounded-[1.75rem] border p-5 transition duration-300 hover:-translate-y-0.5", panelClass)}>
+      <div className="mb-5 flex items-center gap-3">
+        <div className={classNames("h-px flex-1", timelineLine)} />
+        <p className={classNames("shrink-0 rounded-full border px-3 py-1 text-xs font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>{item.date}</p>
       </div>
-      <a className="experience-media-source" href={media.video.source} target="_blank" rel="noreferrer">{failed ? "Photo shown · " : ""}{media.video.label} ↗</a>
-    </div>
+
+      <div className="flex items-start justify-between gap-5">
+        <div>
+          <p className={classNames("text-[10px] font-bold uppercase tracking-[0.22em]", accent)}>{item.theme}</p>
+          <h4 className="mt-2 text-2xl font-semibold tracking-tight">{item.company}</h4>
+          <p className={classNames("mt-1 text-sm", mutedText)}>{item.role}</p>
+          <p className={classNames("mt-1 text-sm", mutedText)}>{item.location}</p>
+        </div>
+
+        {item.image && (
+          <div className={classNames("hidden h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border sm:flex", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-50")}>
+            <img src={item.image} alt={`${item.company} visual`} className="h-full w-full object-contain p-2" />
+          </div>
+        )}
+      </div>
+
+      <div className="mt-5 space-y-3">
+        {points.map((point) => (
+          <p key={point} className={classNames("text-sm leading-6", mutedText)}>
+            <HighlightMetrics text={point} darkMode={darkMode} />
+          </p>
+        ))}
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {item.skills.slice(0, skillLimit).map((skill) => (
+          <span key={skill} className={classNames("rounded-full border px-2.5 py-1 text-[11px] font-semibold", darkMode ? "border-slate-800 bg-slate-950 text-slate-300" : "border-slate-200 bg-slate-50 text-slate-700")}>
+            {skill}
+          </span>
+        ))}
+      </div>
+    </article>
   );
 }
 
 export function ExperienceSections({ darkMode, industryExperience }) {
   return (
-    <section id="experience" className="experience-section mx-auto max-w-7xl px-5 py-16 lg:px-8" data-theme={darkMode ? "dark" : "light"}>
-      <div className="experience-section-heading">
-        <p className="experience-eyebrow">Practical experience</p>
-        <h2>Engineering, in practice.</h2>
-        <p>From production lines to research labs — the problems I worked on, the hardware I built, and the improvements I delivered.</p>
+    <section id="experience" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <div className="mb-7 flex items-end justify-between gap-4">
+        <div>
+          <p className={classNames("mb-2 text-xs font-bold uppercase tracking-[0.24em]", darkMode ? "text-sky-300" : "text-sky-700")}>Practical Experience</p>
+          <h3 className="text-2xl font-semibold tracking-tight">Industry, hardware, research, and systems work</h3>
+        </div>
       </div>
-      <div className="experience-stories">
-        {industryExperience.map((item) => {
-          const media = experienceMedia[item.company] || { name: item.company };
-          return (
-            <article className={classNames("experience-entry", !media.photo && "experience-entry--text")} key={item.company}>
-              {media.video && <ExperienceBanner media={media} />}
-              <div className="experience-story">
-                {media.photo && <ExperiencePhoto photo={media.photo} />}
-                <div className="experience-narrative">
-                  <div className="experience-company">
-                    { (media.logo || item.image) && <a href={item.image} target="_blank" rel="noreferrer" aria-label={`View original ${media.name} logo`}><img src={media.logo || item.image} alt={`${media.name} logo`} loading="lazy" /></a> }
-                    <h3>{media.name}</h3>
-                  </div>
-                  <p className="experience-role">{item.role.split(" - ")[0]}</p>
-                  <p className="experience-program">{media.program}</p>
-                  <div className="experience-description">{(media.paragraphs || item.points).map((text) => <p key={text}>{text}</p>)}</div>
-                  <div className="experience-meta">
-                    {media.website && <a href={media.website} target="_blank" rel="noreferrer">{new URL(media.website).hostname.replace(/^www\./, "")} ↗</a>}
-                    <p>{item.location}</p>
-                    <p>{item.date}</p>
-                  </div>
-                </div>
-              </div>
-              {media.gallery && <div className="experience-gallery">{media.gallery.map((photo) => <ExperiencePhoto key={photo.src} photo={photo} compact />)}</div>}
-            </article>
-          );
-        })}
+
+      <div className="grid gap-5 lg:grid-cols-2">
+        {industryExperience.map((item) => (
+          <PracticalExperienceCard key={`${item.company}-${item.date}`} item={item} darkMode={darkMode} />
+        ))}
       </div>
     </section>
   );
