@@ -2,7 +2,7 @@ export const industryExperience = [
   {
     company: "Zoox",
     role: "Supplier Quality Engineer Intern - Robotaxi",
-    date: "May 2026 - Present",
+    date: "May 2026 - Aug 2026",
     location: "Hayward, CA",
     theme: "Autonomous Robotaxi",
     image: "https://drive.google.com/thumbnail?id=1KokGHFMBIut6GJZcWMtUzMt4ZLOU2It1&sz=w1000",
@@ -22,7 +22,7 @@ export const industryExperience = [
     image: "https://drive.google.com/thumbnail?id=1Ka39fipytWNc6QMjFMcqoB5VEcVwlamF&sz=w1000",
     points: [
       "Leveraged 5+ metrology and process datasets to execute 8D/RCA trials into chronic door-closing effort defects, driving 30% defect reduction and ending a year-long containment.",
-      "Diagnosed leak paths and failure points on 20+ trunk panel water-leak defects, implementing process containments and driving up to 100% reduction on repeat defects through data-driven root-causing and DOE.",
+      "Diagnosed leak paths and failure points on 20+ trunk panel water-leak defects, implementing process containments and driving up to 100% reduction on certain repeat defects through data-driven root-causing and DOE.",
       "Drove hinge validation through design and supplier coordination, achieving 18% torque improvement.",
       "Designed electromechanical protective equipment for large-scale alignment systems using SolidWorks and CATIA 3DX, adding fail-safes and error-proofing to reduce unplanned maintenance.",
     ],
@@ -98,3 +98,4 @@ export const industryExperience = [
     skills: ["Experimental Mechanics", "Lithium-ion Cells", "Thermal Behavior", "Mechanical Testing"],
   },
 ];
+
