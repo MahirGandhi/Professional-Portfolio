@@ -1,155 +1,28 @@
-import { FadeIn, ImageFrame, SymbolIcon, classNames } from "./ui";
+import { SmartImage } from "./ui";
+import "./editorial.css";
 
-export function HeroSection({ profile, darkMode, panelClass, mutedText }) {
+export function HeroSection({ profile, sectionId = "top", titleHeading = "h1" }) {
+  const NameHeading = titleHeading;
   return (
-    <section id="top" className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-16">
-      <style>{`
-        @keyframes portraitFloat {
-          0%, 100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
-          }
-          35% {
-            transform: translate3d(5px, -7px, 0) rotate(0.8deg);
-          }
-          70% {
-            transform: translate3d(-4px, -3px, 0) rotate(-0.6deg);
-          }
-        }
-
-        @keyframes aimFloat {
-          0%, 100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
-          }
-          35% {
-            transform: translate3d(4px, -6px, 0) rotate(0.4deg);
-          }
-          70% {
-            transform: translate3d(-3px, -2px, 0) rotate(-0.3deg);
-          }
-        }
-
-        @keyframes statFloat {
-          0%, 100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
-          }
-          35% {
-            transform: translate3d(3px, -5px, 0) rotate(0.35deg);
-          }
-          70% {
-            transform: translate3d(-2px, -2px, 0) rotate(-0.25deg);
-          }
-        }
-
-        .portrait-hover-card,
-        .aim-hover-card,
-        .stat-hover-card {
-          transform: translate3d(0, 0, 0);
-          transition: transform 220ms ease, filter 220ms ease;
-          will-change: transform;
-        }
-
-        .portrait-hover-card:hover {
-          animation: portraitFloat 1.8s ease-in-out infinite;
-          filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.16));
-        }
-
-        .aim-hover-card:hover {
-          animation: aimFloat 1.8s ease-in-out infinite;
-          filter: drop-shadow(0 18px 35px rgba(14, 165, 233, 0.12));
-        }
-
-        .stat-hover-card:hover {
-          animation: statFloat 1.6s ease-in-out infinite;
-          filter: drop-shadow(0 14px 28px rgba(14, 165, 233, 0.10));
-        }
-      `}</style>
-
-      <FadeIn>
-        <div className="mb-4 space-y-3">
-          <p className={classNames("text-xs font-bold uppercase tracking-[0.32em]", darkMode ? "text-sky-300" : "text-sky-700")}>
-            {profile.title}
-          </p>
-
-          <div className={classNames("inline-flex max-w-fit items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-semibold tracking-wide", darkMode ? "border-sky-300/30 bg-sky-300/10 text-sky-100" : "border-sky-700/25 bg-sky-50 text-sky-950")}>
-            <span>{profile.availability}</span>
-          </div>
+    <section id={sectionId} className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
+      <div className="intro-layout">
+        <div className="intro-portrait"><SmartImage src={profile.profileImage} alt="Mahir Gandhi portrait" loading="eager" className="intro-photo" style={{ objectPosition: "center top" }} /><p>East Lansing, Michigan</p></div>
+        <div className="intro-copy">
+          <p className="editorial-eyebrow">Mechanical Engineering · Michigan State University</p>
+          <NameHeading className="intro-name" tabIndex={-1}>{profile.name}</NameHeading>
+          <h2>I design, build, and improve hardware.</h2>
+          <p className="intro-description">Across Zoox, Tesla, and GM, I’ve built fixtures, investigated defects, and turned production data into useful tools. I like taking a problem from the drawing into the shop and onto the factory floor.</p>
+          <p className="intro-graduation">Graduating December 2027</p>
+          <p className="intro-availability">{profile.availability}</p>
+          <nav className="intro-actions" aria-label="Introduction links">
+            <a className="editorial-primary" href="#experience">See my experience <span aria-hidden="true">↓</span></a>
+            <a href={profile.resumeUrl} target="_blank" rel="noreferrer">Résumé</a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={`mailto:${profile.email}`}>Email me</a>
+          </nav>
         </div>
-
-        <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
-          {profile.name}
-        </h1>
-
-        <div className="portrait-hover-card mt-6 max-w-xs sm:max-w-sm lg:max-w-[21rem]">
-          <ImageFrame
-            src={profile.profileImage}
-            alt="Mahir Gandhi portrait"
-            label="Profile photo"
-            darkMode={darkMode}
-            className="aspect-[4/5]"
-          />
-        </div>
-
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={profile.resumeUrl}
-            className={classNames("inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition", darkMode ? "bg-sky-300 text-slate-950 hover:bg-sky-200" : "bg-slate-950 text-white hover:bg-slate-800")}
-          >
-            Resume <SymbolIcon name="download" />
-          </a>
-
-          <a
-            href={`mailto:${profile.email}`}
-            className={classNames("inline-flex items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition", darkMode ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800" : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100")}
-          >
-            Email Me <SymbolIcon name="mail" />
-          </a>
-
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className={classNames("inline-flex items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition", darkMode ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800" : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100")}
-          >
-            LinkedIn <SymbolIcon name="linkedin" />
-          </a>
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={90}>
-        <div className={classNames("rounded-[2rem] border p-4", panelClass)}>
-          <div className={classNames("aim-hover-card rounded-[1.5rem] border p-5", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-[#F8FAFC]")}>
-            <p className={classNames("text-xs font-bold uppercase tracking-[0.28em]", darkMode ? "text-sky-300" : "text-sky-700")}>
-              {profile.aim.label}
-            </p>
-
-            <div className="mt-4 space-y-2.5">
-              {profile.aim.lines.map((line) => (
-                <h2 key={line} className="text-2xl font-semibold leading-tight tracking-tight lg:text-3xl">
-                  {line}
-                </h2>
-              ))}
-            </div>
-
-            <p className={classNames("mt-4 leading-7", mutedText)}>
-              {profile.aim.text}
-            </p>
-          </div>
-
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            {profile.quickStats.map((stat) => (
-              <div
-                key={stat.label}
-                className={classNames("stat-hover-card rounded-3xl border p-3.5", darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
-              >
-                <p className="text-3xl font-bold tracking-tight">{stat.value}</p>
-                <p className={classNames("mt-1.5 text-sm leading-5", mutedText)}>
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
+      </div>
+      <dl className="intro-stats">{profile.quickStats.map((stat) => <div key={stat.label}><dt>{stat.value}</dt><dd>{stat.label}</dd></div>)}</dl>
     </section>
   );
 }

@@ -1,3 +1,16 @@
+import { useEffect, useState } from "react";
+
+export function SmartImage({ src, alt, className = "", loading = "lazy", fallback, contain = false, style }) {
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [src]);
+  if (!src || failed) {
+    return <div className={classNames("smart-image image-fallback", className)} role="img" aria-label={alt} style={style}>
+      <span>{fallback || `${alt || "Project image"} — image unavailable`}</span>
+    </div>;
+  }
+  return <img src={src} alt={alt} loading={loading} decoding="async" onError={() => setFailed(true)} style={style} className={classNames("smart-image", contain ? "image-contain" : "image-cover", className)} />;
+}
+
 export function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -40,7 +53,7 @@ export function SectionHeader({ eyebrow, title, darkMode }) {
       <p
         className={classNames(
           "mb-3 text-xs font-bold uppercase tracking-[0.28em]",
-          darkMode ? "text-sky-300" : "text-sky-700"
+          darkMode ? "theme-accent" : "theme-accent"
         )}
       >
         {eyebrow}
@@ -59,8 +72,8 @@ export function Pill({ children, darkMode }) {
       className={classNames(
         "rounded-full border px-3 py-1 text-xs font-medium",
         darkMode
-          ? "border-slate-800 bg-slate-950 text-slate-300"
-          : "border-slate-200 bg-white text-slate-700"
+          ? "theme-line theme-raised theme-muted"
+          : "theme-line theme-raised theme-muted"
       )}
     >
       {children}
@@ -83,7 +96,7 @@ export function ImageFrame({
     <div
       className={classNames(
         "overflow-hidden rounded-[1.5rem] border",
-        darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-100",
+        darkMode ? "theme-line theme-raised" : "theme-line theme-surface",
         className
       )}
     >
@@ -94,11 +107,12 @@ export function ImageFrame({
               key={url}
               className={classNames(
                 "flex h-full min-h-[280px] items-center justify-center overflow-hidden rounded-2xl",
-                darkMode ? "bg-slate-950" : "bg-white"
+                darkMode ? "theme-raised" : "theme-raised"
               )}
             >
-              <img
+              <SmartImage
                 src={url}
+                contain
                 alt={alt}
                 className="h-full w-full object-contain p-2"
               />
@@ -106,8 +120,9 @@ export function ImageFrame({
           ))}
         </div>
       ) : src ? (
-        <img
+        <SmartImage
           src={src}
+          contain={contain}
           alt={alt}
           style={{ objectPosition }}
           className={classNames(
@@ -121,7 +136,7 @@ export function ImageFrame({
             name="image"
             className={classNames(
               "text-3xl",
-              darkMode ? "text-slate-600" : "text-slate-400"
+              darkMode ? "theme-muted" : "theme-muted"
             )}
           />
 
@@ -129,7 +144,7 @@ export function ImageFrame({
             <p
               className={classNames(
                 "text-sm font-semibold",
-                darkMode ? "text-slate-300" : "text-slate-700"
+                darkMode ? "theme-muted" : "theme-muted"
               )}
             >
               {label}
@@ -138,7 +153,7 @@ export function ImageFrame({
             <p
               className={classNames(
                 "mt-1 text-xs",
-                darkMode ? "text-slate-500" : "text-slate-500"
+                darkMode ? "theme-muted" : "theme-muted"
               )}
             >
               Image placeholder

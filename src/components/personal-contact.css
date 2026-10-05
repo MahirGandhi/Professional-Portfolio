@@ -1,0 +1,57 @@
+.personal-layout { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.personal-eyebrow, .personal-pick-label { color: var(--accent); font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.personal-intro h2, .contact-compact h2 { margin-top: .65rem; font-size: clamp(1.7rem, 3vw, 2rem); font-weight: 650; letter-spacing: -.035em; line-height: 1.15; }
+.personal-intro > p:not(.personal-eyebrow) { margin-top: 1.25rem; color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 46ch; }
+.personal-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: start; min-width: 0; }
+.personal-pick { min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; transform-origin: 50% 65%; animation: pick-sway 7s ease-in-out infinite; }
+.record-pick { animation-delay: -3.5s; }
+.personal-pick:hover, .personal-pick:focus-within { animation-play-state: paused; }
+.personal-pick-label { font-size: .62rem; letter-spacing: .15em; }
+.show-artwork { height: 220px; margin-top: 1rem; overflow: hidden; border-radius: .75rem; background: var(--tint); }
+.show-artwork img { width: 100%; height: 100%; object-fit: cover; }
+.personal-pick-caption { display: flex; justify-content: space-between; align-items: center; gap: .65rem; margin-top: 1rem; }
+.personal-pick-caption h3 { font-size: 1.15rem; line-height: 1.2; font-weight: 650; letter-spacing: -.02em; }
+.personal-pick-caption p { margin-top: .35rem; color: var(--muted); font-size: .8rem; }
+.personal-pick-caption > a { display: inline-flex; align-items: center; gap: .3rem; flex-shrink: 0; color: var(--accent); font-size: .7rem; }
+.record-deck { position: relative; margin-top: 1rem; height: 220px; display: flex; align-items: center; justify-content: center; border-radius: .75rem; background: var(--tint); overflow: hidden; }
+.record-button { position: relative; width: 172px; height: 172px; border-radius: 50%; cursor: pointer; }
+.record-button:disabled { cursor: wait; }
+.record-disc { position: absolute; inset: 0; display: grid; place-items: center; border-radius: 50%; background: repeating-radial-gradient(circle at center, #1a1d24 0 1px, #080b12 2px 4px); box-shadow: 0 6px 16px #0005, inset 0 0 0 4px #090c13; animation: record-spin 5s linear infinite; animation-play-state: paused; }
+.record-disc::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(transparent 20deg, #ffffff12 45deg, transparent 70deg, transparent 195deg, #ffffff15 225deg, transparent 260deg); pointer-events: none; }
+.record-label { width: 62px; height: 62px; object-fit: cover; border: 3px solid #292d35; border-radius: 50%; }
+.record-spindle { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #e7edf7; box-shadow: 0 0 0 2px #10141c; }
+.record-play-glyph { position: absolute; right: -7px; bottom: -3px; display: grid; place-items: center; width: 38px; height: 38px; border: 3px solid var(--tint); border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: .8rem; z-index: 2; }
+.record-tonearm { position: absolute; top: 21px; right: 24px; width: 9px; height: 114px; border-radius: 5px; background: linear-gradient(90deg, #778398, #e4e9f0 50%, #8491a6); box-shadow: 1px 3px 5px #0005; transform-origin: 50% 9px; transform: rotate(-12deg); transition: transform .6s ease; pointer-events: none; }
+.record-tonearm::before { content: ""; position: absolute; top: -3px; left: -4px; width: 17px; height: 17px; border-radius: 50%; background: #8a98ac; border: 3px solid #d8dfe9; }
+.record-tonearm::after { content: ""; position: absolute; bottom: -4px; left: -3px; width: 15px; height: 24px; border-radius: 3px; background: #3c4859; }
+.record-wave { position: absolute; bottom: 8px; left: 0; right: 0; height: 24px; display: flex; align-items: center; justify-content: center; gap: 3px; pointer-events: none; }
+.record-wave span { width: 3px; height: 3px; background: var(--accent); border-radius: 3px; opacity: .45; }
+.is-playing .record-disc { animation-play-state: running; }
+.is-playing .record-tonearm { transform: rotate(23deg); }
+.is-playing .record-wave span { opacity: .85; animation: record-wave .75s ease-in-out infinite alternate; animation-delay: var(--delay); }
+.record-stream { margin-top: 1rem; }
+.record-embed { min-height: 80px; border-radius: .6rem; overflow: hidden; }
+.record-embed iframe { width: 100%; border: 0; border-radius: .6rem; }
+.record-status { margin-top: .5rem; color: var(--muted); font-size: .65rem; line-height: 1.5; }
+.contact-compact { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 1.75rem 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
+.contact-availability { margin-top: .7rem; max-width: 58ch; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.contact-email-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .8rem; font-size: .85rem; }
+.contact-email-row > a { text-underline-offset: 4px; text-decoration: underline; text-decoration-color: var(--line); }
+.contact-email-row > button { display: grid; place-items: center; padding: .4rem; color: var(--muted); border-radius: .35rem; }
+.contact-email-row > button:hover { color: var(--accent); background: var(--tint); }
+.contact-copy-status { color: var(--muted); font-size: .7rem; }
+.contact-actions { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.contact-email-action { display: inline-flex; align-items: center; justify-content: center; gap: 1.25rem; padding: .8rem 1.4rem; border-radius: 99px; background: var(--accent); color: var(--accent-ink); font-size: .9rem; font-weight: 650; transition: filter .2s; }
+.contact-email-action:hover { filter: brightness(.92); }
+.contact-secondary { display: flex; gap: 1.2rem; color: var(--muted); font-size: .8rem; }
+.contact-secondary a:hover, .personal-pick-caption > a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+@keyframes pick-sway { 0%, 100% { transform: rotate(-.35deg) translateY(0); } 50% { transform: rotate(.35deg) translateY(-2px); } }
+@keyframes record-spin { to { transform: rotate(360deg); } }
+@keyframes record-wave { from { height: 3px; } to { height: var(--bar); } }
+@media (max-width: 1000px) { .personal-layout { grid-template-columns: 1fr; gap: 2rem; } .personal-intro > p:not(.personal-eyebrow) { max-width: 65ch; } .personal-picks { max-width: 720px; } }
+@media (max-width: 600px) { .personal-picks { grid-template-columns: 1fr; gap: 1.25rem; } .personal-pick { max-width: 380px; width: 100%; } .show-artwork, .record-deck { height: 240px; } .contact-compact { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 1.4rem 0; } .contact-actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.25rem; } .contact-secondary { gap: 1rem; } .contact-copy-status { flex-basis: 100%; } }
+@media (prefers-reduced-motion: reduce) { .personal-pick, .record-disc, .is-playing .record-wave span { animation: none; } .record-tonearm { transition: none; } .is-playing .record-wave span { height: var(--bar); } }
+
+.contact-secondary a { display: inline-flex; align-items: center; gap: .3rem; }
+
+.personal-intro h2 { font-size: clamp(2.15rem, 4vw, 3.25rem); line-height: 1.08; font-weight: 650; letter-spacing: -.045em; }

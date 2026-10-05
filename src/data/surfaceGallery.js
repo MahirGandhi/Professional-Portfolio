@@ -26,7 +26,7 @@ export const surfaceGallery = [
   },
   {
     title: "Sheet-Metal Mounting Bracket",
-    caption: "Base tab, flange, bend, cutout features, and PMI",
+    caption: "Base tab, flange, bend, cutout features, and Project Management Institute",
     image: "https://drive.google.com/thumbnail?id=1jEvMFlLT1Xb-Illdq1x0YibyrFEvCzxK&sz=w1000",
   },
   {
@@ -95,3 +95,4 @@ export const surfaceGallery = [
     image: "https://drive.google.com/thumbnail?id=1BKT3ZBAhpWWXdAPQTOeuRk_YOBZGj1Z2&sz=w1000",
   },
 ];
+

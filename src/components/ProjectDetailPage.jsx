@@ -1,240 +1,41 @@
-import { ImageFrame, Pill, SymbolIcon, classNames } from "./ui";
+import { useEffect, useRef, useState } from "react";
+import { SmartImage } from "./ui";
+import "./editorial.css";
 
-export function ProjectDetailPage({ project, profile, darkMode, onBack }) {
-  const mutedText = darkMode ? "text-slate-400" : "text-slate-600";
-  const panelClass = darkMode
-    ? "border-slate-800 bg-slate-900/70"
-    : "border-slate-200 bg-white";
-  const ctaPanel = darkMode
-    ? "border-slate-800 bg-slate-950/85"
-    : "border-slate-200 bg-white/90";
-
-  const ActionButtons = ({ compact = false }) => (
-    <div className={classNames("flex flex-wrap gap-3", compact ? "justify-start" : "justify-between")}>
-      <button
-        type="button"
-        onClick={onBack}
-        className={classNames(
-          "rounded-full border px-4 py-2 text-sm font-bold transition",
-          darkMode
-            ? "border-slate-800 bg-slate-900 text-slate-100 hover:bg-slate-800"
-            : "border-slate-200 bg-white text-slate-950 hover:bg-slate-100"
-        )}
-      >
-        Back to projects
-      </button>
-
-      {profile?.resumeUrl && (
-        <a
-          href={profile.resumeUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={classNames(
-            "inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition",
-            darkMode ? "bg-sky-300 text-slate-950 hover:bg-sky-200" : "bg-slate-950 text-white hover:bg-slate-800"
-          )}
-        >
-          View resume <SymbolIcon name="download" />
-        </a>
-      )}
-    </div>
-  );
-
+export function ProjectDetailPage({ project, profile, onBack }) {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const dialogRef = useRef(null);
+  const imageTrigger = useRef(null);
+  const titleRef = useRef(null);
+  useEffect(() => { titleRef.current?.focus({ preventScroll: true }); }, [project.slug]);
+  useEffect(() => { if (selectedImage && !dialogRef.current?.open) dialogRef.current?.showModal(); }, [selectedImage]);
+  function openImage(item, event) { imageTrigger.current = event.currentTarget; setSelectedImage(item); }
+  function restoreImageFocus() { setSelectedImage(null); imageTrigger.current?.focus({ preventScroll: true }); }
+  const images = !project.hideImage && project.image ? (Array.isArray(project.image) ? project.image : [project.image]) : [];
   return (
-    <main
-      className={classNames(
-        "min-h-screen px-5 py-6 lg:px-8",
-        darkMode ? "bg-[#080B10] text-slate-50" : "bg-[#F8FAFC] text-slate-950"
-      )}
-    >
-      <div className="mx-auto max-w-6xl">
-        <div className={classNames("sticky top-4 z-20 mb-8 rounded-3xl border px-4 py-3 backdrop-blur", ctaPanel)}>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className={classNames("text-sm font-semibold", mutedText)}>{project.title}</p>
-            <ActionButtons compact />
-          </div>
-        </div>
-
-        <section className={classNames("overflow-hidden rounded-[2rem] border", panelClass)}>
-          {!project.hideImage && (
-            <ImageFrame
-              src={project.image}
-              alt={`${project.title} project visual`}
-              label={`${project.title} image`}
-              darkMode={darkMode}
-              className="aspect-[16/9] rounded-none border-0"
-              contain
-            />
-          )}
-
-          <div className="p-6 md:p-10">
-            <p
-              className={classNames(
-                "text-xs font-bold uppercase tracking-[0.28em]",
-                darkMode ? "text-sky-300" : "text-sky-700"
-              )}
-            >
-              {project.category}
-            </p>
-
-            <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <div>
-                <h1 className="max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
-                  {project.title}
-                </h1>
-                <p className={classNames("mt-5 max-w-3xl text-lg leading-8", mutedText)}>
-                  {project.summary}
-                </p>
-              </div>
-
-              <div
-                className={classNames(
-                  "shrink-0 rounded-full px-4 py-2 text-sm font-bold",
-                  darkMode ? "bg-sky-300 text-slate-950" : "bg-sky-100 text-sky-900"
-                )}
-              >
-                {project.metric}
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              {project.skills.map((skill) => (
-                <Pill key={skill} darkMode={darkMode}>
-                  {skill}
-                </Pill>
-              ))}
-            </div>
-          </div>
+    <main className="min-h-screen theme-canvas theme-ink px-5 py-6 lg:px-8">
+      <div className="project-reading">
+        <nav className="project-reading-nav" aria-label="Project navigation">
+          <button type="button" onClick={onBack}>← Back to projects</button>
+          <div><a href={profile.resumeUrl} target="_blank" rel="noreferrer">View résumé</a></div>
+        </nav>
+        <section className={`project-reading-hero${!images.length ? " project-reading-hero--text" : ""}`}>
+          {!!images.length && <figure className={images.length > 1 ? "project-reading-figure--multiple" : undefined}>{images.map((src, index) => <SmartImage key={src} src={src} alt={`${project.title} project visual${images.length > 1 ? ` ${index + 1}` : ""}`} className="project-reading-visual" loading="eager" contain />)}</figure>}
+          <div><p className="editorial-eyebrow">{project.category}</p><h1 ref={titleRef} tabIndex={-1}>{project.title}</h1><p className="project-reading-summary">{project.summary}</p><p className="project-reading-metric">{project.metric}</p><p className="project-reading-tools">{project.skills.join(" · ")}</p></div>
         </section>
-
-        {project.sections && (
-          <section className="mt-8 grid gap-5 md:grid-cols-3">
-            {project.sections.map((section) => (
-              <article
-                key={section.heading}
-                className={classNames("rounded-[1.5rem] border p-6", panelClass)}
-              >
-                <h2 className="text-xl font-semibold">{section.heading}</h2>
-                <p className={classNames("mt-3 leading-7", mutedText)}>{section.body}</p>
-              </article>
-            ))}
-          </section>
-        )}
-
-        {project.components && (
-          <section className={classNames("mt-8 rounded-[2rem] border p-6 md:p-8", panelClass)}>
-            <p
-              className={classNames(
-                "mb-5 text-xs font-bold uppercase tracking-[0.24em]",
-                darkMode ? "text-sky-300" : "text-sky-700"
-              )}
-            >
-              Project Breakdown
-            </p>
-
-            <div className="grid gap-3 md:grid-cols-2">
-              {project.components.map((component) => (
-                <div key={component} className="flex gap-3 text-sm leading-6">
-                  <span
-                    className={classNames(
-                      "mt-2 h-1.5 w-1.5 shrink-0 rounded-full",
-                      darkMode ? "bg-sky-300" : "bg-sky-700"
-                    )}
-                  />
-                  <span className={darkMode ? "text-slate-300" : "text-slate-700"}>
-                    {component}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {project.gallery && (
-          <section className={classNames("mt-8 rounded-[2rem] border p-6 md:p-8", panelClass)}>
-            <p
-              className={classNames(
-                "mb-5 text-xs font-bold uppercase tracking-[0.24em]",
-                darkMode ? "text-sky-300" : "text-sky-700"
-              )}
-            >
-              Full CAD Gallery
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {project.gallery.map((item) => (
-                <div
-                  key={item.title}
-                  className={classNames(
-                    "overflow-hidden rounded-2xl border",
-                    darkMode ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-slate-50"
-                  )}
-                >
-                  <div
-                    className={classNames(
-                      "flex aspect-[4/3] items-center justify-center",
-                      darkMode ? "bg-slate-950" : "bg-slate-100"
-                    )}
-                  >
-                    {item.image ? (
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="h-full w-full object-contain p-3"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center gap-2 p-4 text-center">
-                        <SymbolIcon
-                          name="image"
-                          className={classNames(
-                            "text-3xl",
-                            darkMode ? "text-slate-600" : "text-slate-400"
-                          )}
-                        />
-                        <p
-                          className={classNames(
-                            "text-xs font-semibold",
-                            darkMode ? "text-slate-500" : "text-slate-500"
-                          )}
-                        >
-                          Image placeholder
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-4">
-                    <h3 className="text-sm font-semibold">{item.title}</h3>
-                    {item.caption && (
-                      <p className={classNames("mt-1 text-xs leading-5", mutedText)}>
-                        {item.caption}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {project.confidentialityNote && (
-          <section className={classNames("mt-8 rounded-[2rem] border p-6 text-center", panelClass)}>
-            <p className={classNames("text-sm font-semibold", mutedText)}>
-              {project.confidentialityNote}
-            </p>
-          </section>
-        )}
-
-        <section className={classNames("mt-8 rounded-[2rem] border p-5", panelClass)}>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="font-semibold">Done reviewing this project?</p>
-              <p className={classNames("mt-1 text-sm", mutedText)}>Return to the portfolio or open my resume.</p>
-            </div>
-            <ActionButtons compact />
-          </div>
-        </section>
+        {project.sections && <section className="project-reading-sections" aria-label="Project story">{project.sections.map(section => <article key={section.heading}><h2>{section.heading}</h2><p>{section.body}</p></article>)}</section>}
+        {!!project.details?.length && <section className="project-reading-section"><h2>My contribution</h2><ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul></section>}
+        {project.components && <section className="project-reading-section"><h2>Project breakdown</h2><ul>{project.components.map(component => <li key={component}>{component}</li>)}</ul></section>}
+        {project.gallery && <section className="project-reading-gallery"><h2>Full CAD gallery</h2><div>{project.gallery.map(item => <figure key={item.title}>
+          <button type="button" className="project-gallery-image" aria-label={`Enlarge ${item.title}`} onClick={event => openImage(item, event)}><SmartImage src={item.image} alt={item.title} contain /><span aria-hidden="true">Enlarge</span></button>
+          <figcaption><h3>{item.title}</h3>{item.caption && <p>{item.caption}</p>}</figcaption>
+        </figure>)}</div></section>}
+        {project.confidentialityNote && <p className="project-confidentiality">{project.confidentialityNote}</p>}
+        <footer className="project-reading-footer"><button type="button" onClick={onBack}>← Back to projects</button><a href={profile.resumeUrl} target="_blank" rel="noreferrer">View résumé</a></footer>
       </div>
+      <dialog ref={dialogRef} className="gallery-dialog" aria-labelledby="gallery-dialog-title" aria-describedby={selectedImage?.caption ? "gallery-dialog-description" : undefined} onClose={restoreImageFocus} onClick={event => { if (event.target === event.currentTarget) dialogRef.current?.close(); }}>
+        {selectedImage && <><button type="button" className="gallery-dialog-close" autoFocus onClick={() => dialogRef.current?.close()} aria-label="Close image">Close ×</button><SmartImage src={selectedImage.image} alt={selectedImage.title} loading="eager" className="gallery-dialog-image" contain /><div className="gallery-dialog-caption"><h2 id="gallery-dialog-title">{selectedImage.title}</h2>{selectedImage.caption && <p id="gallery-dialog-description">{selectedImage.caption}</p>}<a href={selectedImage.image} target="_blank" rel="noreferrer">Open original image</a></div></>}
+      </dialog>
     </main>
   );
 }
