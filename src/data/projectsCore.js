@@ -1,17 +1,17 @@
 export const projectsCore = [
   {
     slug: "solar-racing-motor-housing",
-    title: "MSU Solar Racing Motor Housing",
-    category: "EV Hardware / Manufacturing",
-    image: "https://drive.google.com/thumbnail?id=1ZNOQlnGjzV5C1y37sbQYh2kYjvk_5FSe&sz=w1000",
-    summary: "A sealed, lightweight in-wheel motor housing for the MSU Solar Racing Team's Cynisca vehicle, engineered to protect Marand motors from dust, moisture, and track debris.",
+    title: "Michigan State University Solar Racing Motor Housing",
+    category: "electric vehicle Hardware / Manufacturing",
+    image: "/media/experience/solar-housing.png",
+    summary: "A sealed, lightweight in-wheel motor housing for the Michigan State University Solar Racing Team's Cynisca vehicle, engineered to protect Marand motors from dust, moisture, and track debris.",
     details: [
-      "Designed in Siemens NX using DFM principles, synchronous workflows, ordered-history workflows, parametric grooves, and integrated thermal-management considerations",
-      "Machined and assembled 15+ components for two motor housings using GD&T-compliant drawings across 100+ hours of mill and lathe work",
-      "Conducted FEA static structural analysis to drive weight reduction and supported back-EMF motor testing for performance benchmarking",
+      "Designed in Siemens NX using design for manufacturability principles, synchronous workflows, ordered-history workflows, parametric grooves, and integrated thermal-management considerations",
+      "Machined and assembled 15+ components for two motor housings using geometric dimensioning and tolerancing-compliant drawings across 100+ hours of mill and lathe work",
+      "Conducted static structural finite element analysis to drive weight reduction and supported back-electromotive force motor testing for performance benchmarking",
     ],
     metric: "6% weight reduction",
-    skills: ["Siemens NX", "GD&T", "Ansys FEA", "Mill", "Lathe", "Back-EMF Testing", "DFM", "Assembly"],
+    skills: ["Siemens NX", "geometric dimensioning and tolerancing", "Ansys finite element analysis", "Mill", "Lathe", "Back-electromotive force Testing", "design for manufacturability", "Assembly"],
     sections: [
       {
         heading: "Problem",
@@ -19,7 +19,7 @@ export const projectsCore = [
       },
       {
         heading: "Engineering Work",
-        body: "I directed the design, manufacturing, and integration of the motor housing and motor components from concept through testing. The work included CAD design, tolerance planning, FEA validation, machining, assembly, and motor testing.",
+        body: "I directed the design, manufacturing, and integration of the motor housing and motor components from concept through testing. The work included computer-aided design design, tolerance planning, finite element analysis validation, machining, assembly, and motor testing.",
       },
       {
         heading: "Outcome",
@@ -46,11 +46,11 @@ export const projectsCore = [
     summary: "Designed and implemented production fixtures and tooling for standardized front-line assembly operations across Chevrolet Traverse, GMC Acadia, and Buick Enclave programs.",
     details: [
       "Designed, fabricated, and implemented fixtures for liftgate striker placement, hood latch alignment, fascia support, lamp simulation, and smart door-to-header gauge checks",
-      "Used Siemens NX, DFM principles, rapid prototyping, tolerance stackup analysis, and Lean Six Sigma continuous improvement methods",
+      "Used Siemens NX, design for manufacturability principles, rapid prototyping, tolerance stackup analysis, and Lean Six Sigma continuous improvement methods",
       "Supported plant-floor implementation that improved dimensional fit accuracy and process capability while reducing fixture weight by more than 70%",
     ],
     metric: ">70% weight reduction",
-    skills: ["Siemens NX", "Teamcenter", "DFM", "Tolerance Stackup", "SPC", "Lean Six Sigma", "FANUC", "8D"],
+    skills: ["Siemens NX", "Teamcenter", "design for manufacturability", "Tolerance Stackup", "statistical process control", "Lean Six Sigma", "FANUC", "Eight Disciplines problem-solving"],
     sections: [
       {
         heading: "Problem",
@@ -72,7 +72,7 @@ export const projectsCore = [
       "Central lamp quick-apply dupe",
       "Tail lamp simulator dupe",
       "Chevrolet Traverse door-to-header check with integrated spring-loaded feeler gauge",
-      "SPC-guided containment support for body-gap and flush dimensions",
+      "statistical process control-guided containment support for body-gap and flush dimensions",
       "FANUC robot alignment troubleshooting and shim-move support",
     ],
     confidentialityNote: "Due to company confidentiality policies, I'm unable to share related images :(",
@@ -132,7 +132,7 @@ export const projectsCore = [
       "Simulated linear travel, scooping, placement, 360 degree cabin rotation, and sand-sifter motion",
     ],
     metric: "Prototype in <2 weeks",
-    skills: ["Siemens NX", "NX Animation Designer", "Kinematics", "DFM", "Surface Modeling", "Product Design"],
+    skills: ["Siemens NX", "NX Animation Designer", "Kinematics", "design for manufacturability", "Surface Modeling", "Product Design"],
     sections: [
       {
         heading: "Concept",
@@ -157,3 +157,4 @@ export const projectsCore = [
     ],
   },
 ];
+

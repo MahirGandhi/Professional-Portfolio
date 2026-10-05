@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mahir Gandhi mechanical engineering portfolio" />
+    <meta name="description" content="Mahir Gandhi is a Mechanical Engineering student at Michigan State University, graduating December 2027. Explore his manufacturing, quality, and hardware work." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      try {
+        const saved = localStorage.getItem('portfolio-theme');
+        const theme = saved === 'dark' || saved === 'light' ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch {}
+    </script>
     <title>Mahir Gandhi | Portfolio</title>
   </head>
   <body>

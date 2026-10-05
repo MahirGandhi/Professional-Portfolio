@@ -1,16 +1,18 @@
 export const profile = {
   name: "Mahir Gandhi",
   initials: "MG",
-  title: "Honors Mechanical Engineering | Michigan State University | Class of 2027",
-  availability: "Looking for internships post Summer 2026 and full-time roles post Fall 2027",
+  title: "Mechanical Engineering at Michigan State University · Graduating December 2027",
+  availability: "Seeking Summer 2027 internships. Available for full-time roles in January 2028.",
+  introduction: "I’m an Honors student at Michigan State University, pursuing a B.S. in Mechanical Engineering with a Manufacturing Engineering concentration and a minor in Entrepreneurship & Innovation.",
+  intent: "I like taking a problem from the drawing into the shop and onto the factory floor. I’m seeking Summer 2027 internships in manufacturing, quality engineering, or mechanical product design, where I can build, test, and improve hardware that people depend on.",
   role: "Mechanical Engineering | Manufacturing | Product Design | Quality Engineering",
   location: "East Lansing, MI",
   email: "gandhim3@msu.edu",
   phone: "(463)-254-9796",
   linkedin: "https://www.linkedin.com/in/mahir-nishit-gandhi/",
-  resumeUrl: "https://drive.google.com/file/d/1SxSklccwfzw9RiUeT7HJ3xZaaPj09bkE/view?usp=sharing",
+  resumeUrl: "/media/resume/Mahir-Gandhi-Resume.pdf",
   portfolioPdfUrl: "#",
-  profileImage: "https://drive.google.com/thumbnail?id=1im1XU7pivk2nPoGgnRnZh4RTLDmG8hvX&sz=w1000",
+  profileImage: "/media/profile/mahir-gandhi-headshot.png",
   heroLine:
     "Quality • Manufacturing • Product Design • Equipment",
   about:
@@ -27,7 +29,7 @@ export const profile = {
   },
   quickStats: [
     { value: "3+", label: "years of industry, research, and leadership" },
-    { value: "200+", label: "hours of precision machining and hands-on GD&T-focused fabrication" },
+    { value: "200+", label: "hours of precision machining and hands-on geometric dimensioning and tolerancing-focused fabrication" },
     { value: "25+", label: "tooling moves, automation fixes, and production-quality actions across factory systems" },
     { value: "30+", label: "components, tooling, fixtures, and jigs designed and validated" },
   ],
@@ -35,10 +37,10 @@ export const profile = {
     "Product design",
     "Design for manufacturability",
     "Manufacturing operations",
-    "EV hardware",
-    "Physical AI",
+    "electric vehicle hardware",
+    "Physical artificial intelligence",
     "Advanced materials",
-    "CAD surfacing",
+    "computer-aided design surfacing",
     "Entrepreneurship",
     "Biking across hiking trails",
   ],
@@ -48,3 +50,4 @@ export const profile = {
     note: "Use this as a small personal section. Keep it simple so it adds personality without distracting from the engineering portfolio.",
   },
 };
+

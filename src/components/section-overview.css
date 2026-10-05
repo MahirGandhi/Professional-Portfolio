@@ -1,0 +1,64 @@
+.portfolio-flow {
+  overflow: clip;
+}
+
+.portfolio-flow > section {
+  position: relative;
+  scroll-margin-top: 5.5rem;
+  background: var(--section-bg);
+  box-shadow: 0 0 0 100vmax var(--section-bg);
+  clip-path: inset(0 -100vmax);
+  transition: background-color .24s ease;
+
+  /* Keep hierarchy to canvas, surface, and raised surface within each existing chapter. */
+  --canvas: var(--section-bg);
+  --line: color-mix(in srgb, var(--ink) 11%, var(--section-bg));
+  --surface: color-mix(in srgb, var(--section-bg) 96%, var(--ink) 4%);
+  --surface-raised: color-mix(in srgb, var(--section-bg) 93%, var(--ink) 7%);
+  --tint: color-mix(in srgb, var(--accent) 7%, var(--section-bg));
+}
+
+.portfolio-flow > section + section {
+  border-top: 1px solid color-mix(in srgb, var(--ink) 6%, var(--section-bg));
+}
+
+.portfolio-flow > #top { --section-bg: var(--section-hero); }
+.portfolio-flow > #experience { --section-bg: var(--section-experience); }
+.portfolio-flow > #work { --section-bg: var(--section-work); }
+.portfolio-flow > #recognition { --section-bg: var(--section-recognition); }
+.portfolio-flow > #community { --section-bg: var(--section-community); }
+.portfolio-flow > #personal { --section-bg: var(--section-personal); }
+.portfolio-flow > #contact {
+  --section-bg: var(--section-contact);
+  --ink: var(--section-close-ink);
+  --muted: var(--section-close-muted);
+  --accent: var(--section-close-accent);
+  --accent-ink: var(--section-close-accent-ink);
+}
+
+.homepage-compact-shell {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4rem;
+}
+.homepage-compact-shell .compact-showcase { padding: 0; }
+
+.overview-footer {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 2rem 1.5rem;
+  color: var(--section-close-muted);
+  font-size: .7rem;
+  line-height: 1.6;
+  background: var(--section-contact);
+  box-shadow: 0 0 0 100vmax var(--section-contact);
+  clip-path: inset(0 -100vmax);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, var(--section-contact));
+}
+.overview-footer p + p { margin-top: .3rem; }
+
+@media (max-width: 700px) {
+  .homepage-compact-shell { padding: 3rem 1.25rem; }
+  .overview-footer { padding: 1rem 1.25rem 1.25rem; font-size: .65rem; }
+}

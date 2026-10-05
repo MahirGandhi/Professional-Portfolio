@@ -2,38 +2,37 @@ import { useEffect } from "react";
 
 export function CardSpotlight() {
   useEffect(() => {
-    const selector = [
-      "article",
-      "section [class*='rounded-['][class*='border']",
-      "section [class*='rounded-3xl'][class*='border']",
-      "section [class*='rounded-2xl'][class*='border']"
-    ].join(", ");
-    const syncThemeClass = () => {
-      const main = document.querySelector("main");
-      const isDark = main?.className.includes("080B10");
-      document.documentElement.classList.toggle("portfolio-dark", Boolean(isDark));
-      document.documentElement.classList.toggle("portfolio-light", !isDark);
+    const wobbleSelector = ".intro-photo, .show-artwork, .record-button";
+    let activeWobble = null;
+
+    const resetWobble = (element) => {
+      if (!element) return;
+      element.classList.remove("cursor-wobble");
+      element.style.removeProperty("--wobble-x");
+      element.style.removeProperty("--wobble-y");
     };
-    const addClass = () => {
-      syncThemeClass();
-      document.querySelectorAll(selector).forEach((card) => card.classList.add("spotlight-card"));
-    };
+
     const move = (event) => {
-      const card = event.target.closest(".spotlight-card");
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
-      card.style.setProperty("--spotlight-y", `${event.clientY - rect.top}px`);
+      const wobble = event.target.closest?.(wobbleSelector);
+      if (activeWobble && activeWobble !== wobble) resetWobble(activeWobble);
+      activeWobble = wobble || null;
+      if (!wobble) return;
+
+      const rect = wobble.getBoundingClientRect();
+      const nx = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width - 0.5) * 2));
+      const ny = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height - 0.5) * 2));
+      wobble.style.setProperty("--wobble-x", (nx * 1.15).toFixed(2) + "deg");
+      wobble.style.setProperty("--wobble-y", (ny * -1.15).toFixed(2) + "deg");
+      wobble.classList.add("cursor-wobble");
     };
-    addClass();
-    window.addEventListener("mousemove", move);
-    window.addEventListener("click", addClass);
-    window.addEventListener("scroll", addClass, { passive: true });
+
+    window.addEventListener("pointermove", move, { passive: true });
+
     return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("click", addClass);
-      window.removeEventListener("scroll", addClass);
+      resetWobble(activeWobble);
+      window.removeEventListener("pointermove", move);
     };
   }, []);
+
   return null;
 }

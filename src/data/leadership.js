@@ -1,4 +1,4 @@
-export const leadership = [
+const allLeadership = [
   {
     category: "Student Organization",
     title: "MSU Solar Racing Team - Motor Housing Lead",
@@ -56,3 +56,6 @@ export const leadership = [
     skills: ["Entrepreneurship", "Market Research", "Product Strategy", "Technical Creativity", "Pitching"],
   },
 ];
+
+
+export const leadership = allLeadership.filter(item => item.category !== "Competition" && item.category !== "Service + Tutoring" && !item.title.includes("Director, Professional Development"));
