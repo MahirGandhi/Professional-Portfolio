@@ -22,6 +22,11 @@
   border-top: 1px solid color-mix(in srgb, var(--ink) 6%, var(--section-bg));
 }
 
+.portfolio-flow > section[tabindex="-1"]:focus {
+  outline: none;
+}
+
+
 .portfolio-flow > #top { --section-bg: var(--section-hero); }
 .portfolio-flow > #experience { --section-bg: var(--section-experience); }
 .portfolio-flow > #work { --section-bg: var(--section-work); }
