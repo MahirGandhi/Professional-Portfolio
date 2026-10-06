@@ -8,7 +8,7 @@ export const projectPreviews = {
   },
   "gm-fixture-systems": {
     label: "General Motors", title: "Production fixtures",
-    summary: "Six lighter fixtures that make assembly more repeatable across three vehicle programs.",
+    summary: "Lighter fixtures that make assembly more repeatable across three vehicle programs.",
     invitation: "Read the case study",
     outcome: "Six fixtures. Over 70% less weight.",
   },
