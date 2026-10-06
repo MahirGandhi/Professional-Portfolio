@@ -59,7 +59,7 @@ export const experienceMedia = {
     links: [{ href: "https://www.instagram.com/spartantechnicalconsulting/", label: "Spartan Technical Consulting on Instagram" }]
   },
   "National Aeronautics and Space Administration Lucy Student Pipeline Accelerator and Competency Enabler": {
-    id: "nasa-lspace", name: "Lucy Mission Student Academy", bannerName: "Venus Aerobot Reference", website: "https://www.lspace.asu.edu/",
+    id: "nasa-lspace", name: "Lucy Mission Student Academy", bannerName: "NASA LSPACE", website: "https://www.lspace.asu.edu/",
     program: "Orpheus · Venus aerobot thermal architecture",
     banner: { src: `${root}venus-aerobot.jpg`, alt: "National Aeronautics and Space Administration Jet Propulsion Laboratory's Venus aerobot prototype being prepared for a desert test flight", label: "Public aerobot reference · National Aeronautics and Space Administration/Jet Propulsion Laboratory-Caltech" },
     photo: { src: `${root}lspace-logo.png`, alt: "National Aeronautics and Space Administration Lucy Student Pipeline Accelerator and Competency Enabler program logo", contain: true, source: "https://www.lspace.asu.edu/", caption: "Mission Concept Academy · Lead Thermal Engineer" },
