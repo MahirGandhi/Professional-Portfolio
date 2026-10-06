@@ -61,7 +61,7 @@ export const experienceMedia = {
   "National Aeronautics and Space Administration Lucy Student Pipeline Accelerator and Competency Enabler": {
     id: "nasa-lspace", name: "Lucy Mission Student Academy", bannerName: "Venus Aerobot Reference", website: "https://www.lspace.asu.edu/",
     program: "Orpheus · Venus aerobot thermal architecture",
-    banner: { src: `${root}venus-aerobot.jpg`, alt: "National Aeronautics and Space Administration Jet Propulsion Laboratory's Venus aerobot prototype being prepared for a desert test flight", label: "Public aerobot reference · National Aeronautics and Space Administration/Jet Propulsion Laboratory-Caltech · Separate from the Orpheus student concept" },
+    banner: { src: `${root}venus-aerobot.jpg`, alt: "National Aeronautics and Space Administration Jet Propulsion Laboratory's Venus aerobot prototype being prepared for a desert test flight", label: "Public aerobot reference · National Aeronautics and Space Administration/Jet Propulsion Laboratory-Caltech" },
     photo: { src: `${root}lspace-logo.png`, alt: "National Aeronautics and Space Administration Lucy Student Pipeline Accelerator and Competency Enabler program logo", contain: true, source: "https://www.lspace.asu.edu/", caption: "Mission Concept Academy · Lead Thermal Engineer" },
     paragraphs: [
       "I led thermal engineering for a Venus aerobot student concept, bringing architecture, hardware integration, and risk planning together into a lighter system ready for preliminary design review."
